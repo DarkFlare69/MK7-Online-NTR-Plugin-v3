@@ -31,7 +31,7 @@ JPN   -   SD:/plugin/0004000000030600/
 6. Enable cheats & have fun!
 
 # Video
-https://youtu.be/is_H5CkzBJo
+https://youtu.be/jvunqFBJyRM
 
 # Credits
 
