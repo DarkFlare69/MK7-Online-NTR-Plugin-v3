@@ -1,5 +1,15 @@
 # Mario Kart 7 NTR Plugin
-This is an online NTR plugin for Mario Kart 7. This is a complete remake of an old NTR plugin I made. This one was built with stability and optimization in mind. It's a lot cleaner than before and has more things to help ensure stability.
+This is an online NTR plugin for Mario Kart 7. This plugin is built around CTRPluginFramework, meaning it has many new features and advantages over older NTR plugins.
+
+# Advantages of CTRPluginFramework
+
+-Remap buttons permanently: You can choose which button you want to use to open the menu, and it will stay even after restarting your 3DS.
+-RAM Dumper: Help debug codes by dumping your game's RAM.
+-Code searcher: Find your own cheats and use them alongside this plugin
+-Cleaner menu
+-Faster executions
+-Increased stability
+-Much, much more. Explore it all for yourself!
 
 # Compatibility
 Rev0 USA - Fully Compatible
