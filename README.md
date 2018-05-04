@@ -4,11 +4,17 @@ This is an online NTR plugin for Mario Kart 7. This plugin is built around CTRPl
 # Advantages of CTRPluginFramework
 
 -Remap buttons permanently: You can choose which button you want to use to open the menu, and it will stay even after restarting your 3DS.
+
 -RAM Dumper: Help debug codes by dumping your game's RAM.
+
 -Code searcher: Find your own cheats and use them alongside this plugin
+
 -Cleaner menu
+
 -Faster executions
+
 -Increased stability
+
 -Much, much more. Explore it all for yourself!
 
 # Compatibility
