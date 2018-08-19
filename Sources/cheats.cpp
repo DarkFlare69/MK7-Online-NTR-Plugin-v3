@@ -25,13 +25,23 @@ namespace CTRPluginFramework
 	bool is_in_range(u32 value, u32 lowerbound, u32 upperbound)
 	{
 		if (value > lowerbound && value < upperbound)
-		{
 			return true;
-		}
 		else
-		{
 			return false;
+	}
+
+	bool IsInRace()
+	{
+		u32 offset;
+		if (Process::Read32(0x14000084, offset) && is_in_range(offset, 0x14000000, 0x18000000))
+		{
+			if (Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
+			{
+				if (Process::Read32(offset + 0x118, offset) && (offset & 0xFF) == 1)
+					return true;
+			}
 		}
+		return false;
 	}
 
 	u32 GetRacePointer()
@@ -47,9 +57,7 @@ namespace CTRPluginFramework
 					if (Process::Read32(pointer + 0x518, pointer) && is_in_range(pointer, 0x14000000, 0x18000000))
 					{
 						if (Process::Read32(pointer + 0x1C, pointer) && is_in_range(pointer, 0x14000000, 0x18000000))
-						{
 							return pointer;
-						}
 					}
 				}
 			}
@@ -57,30 +65,12 @@ namespace CTRPluginFramework
 		return 0;
 	}
 
-	bool IsInRace()
-	{
-		u32 offset;
-		if (Process::Read32(0x14000084, offset) && is_in_range(offset, 0x14000000, 0x18000000))
-		{
-			if (Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
-			{
-				if (Process::Read32(offset + 0x118, offset) && (offset & 0xFF) == 1)
-				{
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
 	u32	GetFNsPointer()
 	{
 		u32 g_FNsPointer;
 		bool in_race = IsInRace();
 		if (in_race && Process::Read32(0xFFFF6F0, g_FNsPointer) && is_in_range(g_FNsPointer, 0x14000000, 0x18000000))
-		{
 			return (g_FNsPointer + 8);
-		}
 		return 0;
 	}
 
@@ -91,9 +81,7 @@ namespace CTRPluginFramework
 		if (in_race && Process::Read32(0xFFFFBF4, g_oldRacePointer5CC) && is_in_range(g_oldRacePointer5CC, 0x14000000, 0x18000000))
 		{
 			if (Process::Read32(g_oldRacePointer5CC + 0x5CC, g_oldRacePointer5CC) && g_oldRacePointer5CC > 0x14000000 && g_oldRacePointer5CC < 0x18000000)
-			{
 				return g_oldRacePointer5CC;
-			}
 		}
 		return 0;
 	}
@@ -105,9 +93,7 @@ namespace CTRPluginFramework
 		if (in_race && Process::Read32(0xFFFFBF4, g_oldRacePointer5D0) && is_in_range(g_oldRacePointer5D0, 0x14000000, 0x18000000))
 		{
 			if (Process::Read32(g_oldRacePointer5D0 + 0x5D0, g_oldRacePointer5D0) && is_in_range(g_oldRacePointer5D0, 0x14000000, 0x18000000))
-			{
 				return g_oldRacePointer5D0;
-			}
 		}
 		return 0;
 	}
@@ -121,12 +107,75 @@ namespace CTRPluginFramework
 			if (Process::Read32(g_itemPointer - 0x1B5C, g_itemPointer) && is_in_range(g_itemPointer, 0x14000000, 0x18000000))
 			{
 				if (Process::Read32(g_itemPointer + 0x27AC, g_itemPointer) && is_in_range(g_itemPointer, 0x14000000, 0x18000000))
-				{
 					return g_itemPointer;
-				}
 			}
 		}
 		return 0;
+	}
+
+	u8 GetTotalPlayers()
+	{		u32 pointer;
+		u8 total;
+		if (Process::Read32(0x14000074, pointer) && is_in_range(pointer, 0x14000000, 0x18000000))
+		{
+			if (Process::Read32(pointer - 0xC10, pointer) && is_in_range(pointer, 0x14000000, 0x18000000))
+			{
+				if (Process::Read32(pointer + 0x23C, pointer) && is_in_range(pointer, 0x14000000, 0x18000000))
+				{
+					if (Process::Read8(pointer - 0xF28, total) && is_in_range(pointer, 0x14000000, 0x18000000))
+					{
+						return total;
+					}
+				}
+			}
+		}
+	}
+
+	u16	GetTime()
+	{
+		u32 pointer = GetOldPointer5D0();
+		u16 time = 0;
+		if (is_in_range(pointer, 0x14000000, 0x18000000))
+		{
+			Process::Read16(pointer + 0x484, time);
+			time /= 60;
+			if (300 - time < 0)
+				return 0;
+			else
+				return 300 - time;
+		}
+	}
+
+	u16	GetMinutes()
+	{
+		u16 time = GetTime(), minutes = 0;
+		while (time - 60 >= 0)
+		{
+			time -= 60;
+			minutes++;
+		}
+		return minutes;
+	}
+
+	u16	GetSeconds()
+	{
+		u16 time = GetTime();
+		while (time - 60 >= 0)
+			time -= 60;
+		return time;
+	}
+
+	void	SubToTime(u16 seconds) // below are functions that countdown mode will use
+	{
+		u32 pointer = GetOldPointer5D0(), g_racePointer = GetRacePointer();
+		u16 time = 0;
+		if (is_in_range(pointer, 0x14000000, 0x18000000))
+		{
+			Process::Read16(pointer + 0x484, time);
+			time -= (seconds * 60);
+			Process::Write16(pointer + 0x484, time);
+			Process::Write16(g_racePointer + 0xC4, time);
+		}
 	}
 
 	void	writeItem(u32 item)
@@ -158,17 +207,13 @@ namespace CTRPluginFramework
 	void	writeVR(u32 vr)
 	{
 		if (Process::Read32(0x663D04, offset) && is_in_range(offset, 0x10000000, 0x18000000))
-		{
 			Process::Write32(offset - 0xE30, vr);
-		}
 	}
 
 	void	writeLocation(u32 location)
 	{
 		if (Process::Read32(0x6673C8, offset) && is_in_range(offset, 0x10000000, 0x18000000))
-		{
 			Process::Write32(offset + 0xF7CC, location);
-		}
 	}
 
 	void	writeFlag(u16 flag)
@@ -463,6 +508,55 @@ namespace CTRPluginFramework
 			{
 				memcpy((void *)(pointer2 + 0x20), (void*)(pointer + 0x20), 24);
 			}
+		}
+	}
+
+	void sizeChanger(MenuEntry *entry) // causes problems sometimes
+	{
+		u32 g_racePointer = GetRacePointer();
+		static float PlayerSize = 1.f, speed = 0.03f;
+		static bool adding = true, held = false;
+		bool in_race = IsInRace();
+		if (in_race && is_in_range(g_racePointer, 0x14000000, 0x18000000))
+		{
+			if (PlayerSize < 3.f && adding)
+			{
+				PlayerSize += speed;
+			}
+			if (PlayerSize > 0.1f && !adding)
+			{
+				PlayerSize -= speed;
+			}
+			if (PlayerSize > 3.f && adding)
+			{
+				adding = false;
+				PlayerSize -= speed;
+			}
+			if (PlayerSize < 0.1f && !adding)
+			{
+				adding = true;
+				PlayerSize += speed;
+			}
+			Process::WriteFloat(g_racePointer + 0x100C, PlayerSize);
+		}
+		if (!held && in_race && -0.015f < speed && speed < 0.15f && speed != 0.15f && Controller::IsKeyDown(DPadRight))
+		{
+			held = true;
+			speed += 0.01f;
+		}
+		if (!held && in_race && -0.015f < speed && speed < 0.15f && speed != -0.15f && Controller::IsKeyDown(DPadLeft))
+		{
+			held = true;
+			speed -= 0.01f;
+		}
+		if (!held && in_race && Controller::IsKeyDown(DPadDown))
+		{
+			held = true;
+			speed = 0;
+		}
+		if (!Controller::IsKeyDown(DPadRight) && !Controller::IsKeyDown(DPadLeft))
+		{
+			held = false;
 		}
 	}
 
@@ -925,6 +1019,82 @@ namespace CTRPluginFramework
 			}
 		}
 	} */
+
+	void	CountdownMode(MenuEntry *entry)
+	{
+		u32 pointer = 0, value = 0, g_racePointer = GetRacePointer(), g_oldRacePointer5D0 = GetOldPointer5D0(), g_oldRacePointer5CC = GetOldPointer5CC();
+		bool in_race = IsInRace();
+		static u8 score = 0;
+		static bool AddedToScore = false, AddedToTime = false, end_race = false;
+		if (!in_race)
+		{
+			score = 0;
+			AddedToScore = false;
+			AddedToTime = false;
+			end_race = false;
+			return;
+		}
+		else
+		{
+			if (Process::Read32(0x65C528, pointer) && Process::Read32(pointer + 0xC8, pointer) && is_in_range(pointer, 0x16000000, 0x18000000))
+			{
+				Process::Write32(pointer + 0x34, 0);
+				Process::Write32(pointer + 0x38, 0);
+			}
+			if (GetTime() == 300 && !AddedToTime)
+			{
+				SubToTime(-180);
+				AddedToTime = true;
+				Process::Write8(g_oldRacePointer5CC + 0x59, 0x25);
+			}
+
+			if (!AddedToScore && Process::Read32(0xFFFF6F0, pointer) && Process::Read32(pointer - 0xC, pointer) && Process::Read32(pointer - 0x24, pointer) && Process::Read32(pointer + 0x7C, pointer) && Process::Read32(pointer + 0x20, pointer) && Process::Read32(pointer + 0x70, pointer) && Process::Read32(pointer - 0x30, pointer) && Process::Read32(pointer + 0x38, value) && Process::Read32(pointer + 0x48, pointer) && is_in_range(value, 0x40000000, pointer))
+			{
+				SubToTime(3);
+				AddedToScore = true;
+				score++;
+			}
+			if (AddedToScore && Process::Read32(0xFFFF6F0, pointer) && Process::Read32(pointer - 0xC, pointer) && Process::Read32(pointer - 0x24, pointer) && Process::Read32(pointer + 0x7C, pointer) && Process::Read32(pointer + 0x20, pointer) && Process::Read32(pointer + 0x70, pointer) && Process::Read32(pointer - 0x30, pointer) && Process::Read32(pointer + 0x38, value) && Process::Read32(pointer + 0x48, pointer) && value == pointer)
+			{
+				AddedToScore = false;
+			}
+
+			if (GetTime() == 0 || end_race)
+			{
+				u8 total = 0;
+				u32 totalPlayers = (int)GetTotalPlayers() + 1;
+				Process::Write32(g_racePointer + 0xF2C, 0);
+				end_race = true;
+				Process::Read32(0x65DA44, value);
+				for (int i = 1; i < totalPlayers; i++)
+				{
+					if (Process::Read32(value + 0x209C + (i * 0x44), pointer) && Process::Read32(pointer + 0xF2C, pointer) && pointer < 0x3DCCCCCD)
+					{
+						total++;
+					}
+					else if (pointer > 0x3DCCCCCD)
+					{
+						break;
+					}
+					if (total + 1 == totalPlayers)
+					{
+						Process::Write8(g_oldRacePointer5D0 + 0x4F8, 3);
+						Process::Write8(g_oldRacePointer5D0 + 0x10EC, 3);
+						Process::Write8(g_oldRacePointer5D0 + 0x18EC, 3);	
+						break;
+					}
+				}
+			}
+			OSD::Run([](const Screen &screen)
+			{
+				if (!screen.IsTop)
+					return false;
+				screen.Draw(Utils::Format("Score: %01d", score), 10, 211);
+				screen.Draw(Utils::Format("Time: %01d:%02d", GetMinutes(), GetSeconds()), 10, 223);
+				return true;
+			});
+		}
+	}
 
 	/////////////////////////////////////////////////////////    Start of menu codes    /////////////////////////////////////////////////////////
 

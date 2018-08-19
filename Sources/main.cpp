@@ -6,10 +6,10 @@ namespace CTRPluginFramework
 
     int main()
     {
-        PluginMenu *menu = new PluginMenu("DarkFlare's MK7 NTR Plugin", 3, 1, 2);
+        PluginMenu *menu = new PluginMenu("DarkFlare's MK7 NTR Plugin", 3, 3, 0);
         menu->SynchronizeWithFrame(true);
 
-		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr; // this is how I keep trace of the folder levels
+		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
 
 		std::string invincible_note = "You will be invincible. You will also appear blinking on other people's screens online.";
 		std::string alwaysStarPower_note = "You will always have star effects, such as invincibility and color.";
@@ -57,6 +57,8 @@ namespace CTRPluginFramework
 		std::string trickAnywhere_note = "You will be able to perform a trick anywhere by pressing R.";
 		std::string SetFlag_note = "A keyboard will come up when you exit the menu and you will be allowed to enter your desired flag ID (in hexadecimal). You can get these from the MK7 NTR Plugin GBAtemp thread.";
 		std::string SetCoordinates_note = "A keyboard will come up when you exit the menu and you will be allowed to enter your desired coordinates. You can get these from the MK7 NTR Plugin GBAtemp thread.";
+		std::string sizeChanger_note = "Your kart will constantly increase and decrease in size. Use D-Pad Left and D-Pad Right to change the speed at which your kart will change size. This code can cause problems sometimes.";
+		std::string CountdownMode_note = "You will have 2 minutes to race. Every time you hit a player with an item, your time will increase by 3 seconds. You will need to strategically gain more time while still being towards the front of the pack. The player in first place when everyone's time runs out wins!";
 
         kartcodes = new MenuFolder("Kart Codes");
 		kartcodes->Append(new MenuEntry("Invincibility", invincible, invincible_note));
@@ -67,6 +69,7 @@ namespace CTRPluginFramework
 		kartcodes->Append(new MenuEntry("Trick Anywhere", trickAnywhere, trickAnywhere_note));
 		kartcodes->Append(new MenuEntry("Instant MiniTurbo", instantMT, instantMT_note));
 		kartcodes->Append(new MenuEntry("Huge Bunnyhop", hugeBunnyhop, hugeBunnyhop_note));
+		kartcodes->Append(new MenuEntry("Size Changer", sizeChanger, sizeChanger_note));
         menu->Append(kartcodes);
 		
 		speedcodes = new MenuFolder("Speed & Movement Codes");
@@ -118,6 +121,7 @@ namespace CTRPluginFramework
 		//gamemodes->Append(new MenuEntry("Shine Thief", shineTheif, shineTheif_note));
 		//gamemodes->Append(new MenuEntry("Tag", tagMode, tagMode_note));
 		gamemodes->Append(new MenuEntry("Elimination Mode", eliminationMode, eliminationMode_note));
+		gamemodes->Append(new MenuEntry("Countdown Mode", CountdownMode, CountdownMode_note));
 		menu->Append(gamemodes);
 
 		regioncodes = new MenuFolder("Region & Flag Codes");

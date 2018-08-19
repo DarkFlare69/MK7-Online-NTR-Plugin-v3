@@ -15,17 +15,21 @@ namespace CTRPluginFramework
 	u32	GetOldPointer5CC();
 	u32	GetOldPointer5D0();
 	u32	GetItemPointer();
+	u16	GetTime();
+	u16	GetMinutes();
+	u16	GetSeconds();
+	void	SubToTime(u16 seconds);
 	void	writeItem(u32 item);
 	void	writeSpeed(u32 speed);
 	void	writeVR(u32 vr);
 	void	writeLocation(u32 location);
 	void	writeFlag(u8 flag);
-	void invincible(MenuEntry *entry);
-	void alwaysStarPower(MenuEntry *entry);
-	void trickAnywhere(MenuEntry *entry);
-	void alwaysBlackKart(MenuEntry *entry);
-	void alwaysShocked(MenuEntry *entry);
-	void alwaysCrushed(MenuEntry *entry);
+	void	invincible(MenuEntry *entry);
+	void	alwaysStarPower(MenuEntry *entry);
+	void	trickAnywhere(MenuEntry *entry);
+	void	alwaysBlackKart(MenuEntry *entry);
+	void	alwaysShocked(MenuEntry *entry);
+	void	alwaysCrushed(MenuEntry *entry);
 	void	instantMT(MenuEntry *entry);
 	void	hugeBunnyhop(MenuEntry *entry);
 	void	fastReverse(MenuEntry *entry);
@@ -65,6 +69,8 @@ namespace CTRPluginFramework
 	void	fastGame(MenuEntry *entry);
 	void    SetFlag(MenuEntry *entry);
 	void    SetCoordinates(MenuEntry *entry);
+	void	sizeChanger(MenuEntry *entry);
+	void	CountdownMode(MenuEntry *entry);
 	
 }
 
