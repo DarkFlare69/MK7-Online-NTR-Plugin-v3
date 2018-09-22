@@ -71,7 +71,8 @@ namespace CTRPluginFramework
 	void    SetCoordinates(MenuEntry *entry);
 	void	sizeChanger(MenuEntry *entry);
 	void	CountdownMode(MenuEntry *entry);
-	
+	void	timeTrialGhost(MenuEntry *entry);
+
 }
 
 #endif

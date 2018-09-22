@@ -59,6 +59,7 @@ namespace CTRPluginFramework
 		std::string SetCoordinates_note = "A keyboard will come up when you exit the menu and you will be allowed to enter your desired coordinates. You can get these from the MK7 NTR Plugin GBAtemp thread.";
 		std::string sizeChanger_note = "Your kart will constantly increase and decrease in size. Use D-Pad Left and D-Pad Right to change the speed at which your kart will change size. This code can cause problems sometimes.";
 		std::string CountdownMode_note = "You will have 2 minutes to race. Every time you hit a player with an item, your time will increase by 3 seconds. You will need to strategically gain more time while still being towards the front of the pack. The player in first place when everyone's time runs out wins!";
+		std::string timeTrialGhost_note = "Please follow these steps:\n1. Activate this code and then enter the time trial with the ghost you want to view.\n2. Your kart will be out of bounds. Restart the race.\n3. Done! The code should be working.";
 
         kartcodes = new MenuFolder("Kart Codes");
 		kartcodes->Append(new MenuEntry("Invincibility", invincible, invincible_note));
@@ -111,6 +112,7 @@ namespace CTRPluginFramework
 		menucodes->Append(new MenuEntry("Disable First Person View", disableFirstPersonView, disableFirstPersonView_note));
 		menucodes->Append(new MenuEntry("No Disconnect", NoDC, NoDC_note));
 		menucodes->Append(new MenuEntry("Fast Game/Anti-Matrix", fastGame, fastGame_note));
+		menucodes->Append(new MenuEntry("Live Time Trial Ghost Replay", timeTrialGhost, timeTrialGhost_note));
 		menucodes->Append(new MenuEntry("VR Extender (See Note)", vrExtender, vrExtender_note));
 		menucodes->Append(new MenuEntry("Set Custom VR", SetVR, SetVR_note));
 		menucodes->Append(new MenuEntry("Random VR", randomVR, randomVR_note));

@@ -24,10 +24,7 @@ namespace CTRPluginFramework
 
 	bool is_in_range(u32 value, u32 lowerbound, u32 upperbound)
 	{
-		if (value > lowerbound && value < upperbound)
-			return true;
-		else
-			return false;
+		return (value > lowerbound && value < upperbound);
 	}
 
 	bool IsInRace()
@@ -165,7 +162,7 @@ namespace CTRPluginFramework
 		return time;
 	}
 
-	void	SubToTime(u16 seconds) // below are functions that countdown mode will use
+	void	SubToTime(u16 seconds)
 	{
 		u32 pointer = GetOldPointer5D0(), g_racePointer = GetRacePointer();
 		u16 time = 0;
@@ -1103,6 +1100,28 @@ namespace CTRPluginFramework
 		if (Process::Read32(0x14000084, offset) && Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 		{
 			Process::Write8(offset + 0x119, 0);
+		}
+	}
+
+	void	timeTrialGhost(MenuEntry *entry)
+	{
+		/*
+		-You must enter a race and then exit/finish/restart the race in order for this to take effect
+		-Having this enabled for more than 1 race will crash the game, unless you click restart and not exit or next course or anything else.
+		*/
+		u32 pointer = 0, g_racePointer = GetRacePointer();
+		bool in_race = IsInRace();
+		if (Process::Read32(0xFFFF5D4, pointer) && Process::Read32(pointer - 4, pointer) && Process::Read32(pointer + 0x18, pointer))
+		{
+			if (Process::Read32(0x14000084, offset) && Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
+			{
+				Process::Write8(offset + 0x119, 0);
+				Process::Write32(pointer + 0x208, 0x10001);
+				if (in_race && Process::Read32(0x65DA44, pointer) && Process::Read32(pointer + 0x20E0, pointer))
+				{
+					Process::Write32(pointer + 0x24, 0x49000000);
+				}
+			}
 		}
 	}
 
