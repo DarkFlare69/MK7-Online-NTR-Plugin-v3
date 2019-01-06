@@ -342,6 +342,55 @@ namespace CTRPluginFramework
 		}
 	}
 
+	void	smartSteering(MenuEntry *entry) // extremely beta
+	{
+		bool in_race = IsInRace();
+		u32 g_racePointer = GetRacePointer();
+		float angleKart = 0, distanceFromCenter = 0;
+		if (!in_race)
+			return;
+		if (Process::ReadFloat(0x16D43428, distanceFromCenter) && Process::ReadFloat(g_racePointer + 0x18, angleKart) && !(distanceFromCenter > -0.2f && distanceFromCenter < 0.2f))
+		{
+			angleKart += 0.5f;
+			Process::WriteFloat(g_racePointer + 0x18, angleKart);
+		}
+		/*if (Process::Read8(0x677814, kcl)
+		{
+			These addresses seem to be the distance from center of checkpoint:
+			161563CC
+			161567CC
+			161968AC
+			Seem to be best 16D43428 = -0.160237595439
+			Seem to be best 16D436B8 = -0.160237595439
+			
+			if (kcl < 5 || kcl == 8 || kcl == 9)) // if you're on a road
+			{
+				Process::Read32(g_racePointer + 0x24, x);
+				Process::Read32(g_racePointer + 0x28, y);
+				Process::Read32(g_racePointer + 0x2C, z);
+			}
+			else
+			{
+				Process::Write32(g_racePointer + 0x24, x);
+				Process::Write32(g_racePointer + 0x28, y);
+				Process::Write32(g_racePointer + 0x2C, z);
+			}
+		}*/
+	}
+
+	void	insideDrift(MenuEntry *entry) // untested
+	{
+		// 006655F0 40800000
+		bool in_race = IsInRace();
+		u32 original = 0, tmp = 0;
+		if (Process::Read32(0x6655F0, tmp) && tmp != 0x40800000)
+			original = tmp;
+		if (in_race && Controller::IsKeyDown(R))
+			Process::Write32(0x6655F0, 0x40800000);
+		else if (original != 0)
+			Process::Write32(0x6655F0, original);
+	}
+
 	void	maxTimer(MenuEntry *entry)
 	{
 		bool in_race = IsInRace();
@@ -690,6 +739,40 @@ namespace CTRPluginFramework
 				writeItem(4);
 			if (Controller::IsKeyDown(DPadUp))
 				writeItem(1);
+		}
+	}
+
+	void    randomItems(MenuEntry *entry)
+	{
+		int randNumber = rand() % 14;
+		if (randNumber == 0xF || randNumber == 0x10)
+			randNumber = rand() % 14;
+		writeItem(randNumber);
+	}
+
+	void    trulyRandomItems(MenuEntry *entry)
+	{
+		// 16EF7052 is 16 bit
+		// Process::Read32(0x14000074, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read32(tmp2 - 0x1B5C, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read16(tmp2 + 0x882, tmp3) && tmp3 == 1
+		u32 randNumber = rand() % 14, g_itemPointer = GetItemPointer(), tmp = 0, tmp2 = 0;
+		u16 tmp3 = 0;
+		bool in_race = IsInRace(), alreadyGivenItem = false;
+		if (randNumber == 0xF || randNumber == 0x10)
+			randNumber = rand() % 14;
+		if (!alreadyGivenItem && in_race && is_in_range(g_itemPointer, 0x14000000, 0x18000000) && Process::Read32(g_itemPointer + 0x3C, tmp) && is_in_range(tmp, 0, 4) && Process::Read32(g_itemPointer + 0xC8, tmp2) && tmp2 != 0xFFFFFFFF && Process::Read32(0x14000074, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read32(tmp2 - 0x1B5C, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read16(tmp2 + 0x882, tmp3) && tmp3 == 1)
+		{
+			if ((randNumber == 7 || randNumber == 0x11 || randNumber == 0x12 || randNumber == 0x13) && tmp == 1)
+				Process::Write32(g_itemPointer + 0x3C, 3);
+			else if ((randNumber != 7 && randNumber != 0x11 && randNumber != 0x12 && randNumber != 0x13) && tmp == 3)
+				Process::Write32(g_itemPointer + 0x3C, 1);
+			Process::Write32(g_itemPointer + 0xA8, 3);
+			Process::Write32(g_itemPointer + 0xC8, randNumber);
+			Process::Write32(g_itemPointer + 0xD8, 0x3F800000);
+			alreadyGivenItem = true;
+		}
+		if (tmp3 == 0)
+		{
+			alreadyGivenItem = false;
 		}
 	}
 
@@ -1109,7 +1192,7 @@ namespace CTRPluginFramework
 		-You must enter a race and then exit/finish/restart the race in order for this to take effect
 		-Having this enabled for more than 1 race will crash the game, unless you click restart and not exit or next course or anything else.
 		*/
-		u32 pointer = 0, g_racePointer = GetRacePointer();
+		u32 pointer = 0;
 		bool in_race = IsInRace();
 		if (Process::Read32(0xFFFF5D4, pointer) && Process::Read32(pointer - 4, pointer) && Process::Read32(pointer + 0x18, pointer))
 		{
@@ -1120,6 +1203,26 @@ namespace CTRPluginFramework
 				if (in_race && Process::Read32(0x65DA44, pointer) && Process::Read32(pointer + 0x20E0, pointer))
 				{
 					Process::Write32(pointer + 0x24, 0x49000000);
+				}
+			}
+		}
+	}
+
+	void	customMessage(MenuEntry *entry)
+	{
+		bool in_race = IsInRace();
+		if (!in_race && Controller::IsKeyDown(Key::Left))
+		{
+			static bool shown_dialogue = false;
+			static u8 messageID = 0;
+			std::string	original = "Enter the message ID (0 - 255):";
+			if (!shown_dialogue)
+			{
+				Keyboard	keyboard(original);
+				shown_dialogue = true;
+				if (keyboard.Open(messageID) != -1)
+				{
+					Process::Write8(0x152EE7A2, messageID);
 				}
 			}
 		}

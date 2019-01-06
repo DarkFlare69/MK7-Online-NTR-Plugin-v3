@@ -72,7 +72,11 @@ namespace CTRPluginFramework
 	void	sizeChanger(MenuEntry *entry);
 	void	CountdownMode(MenuEntry *entry);
 	void	timeTrialGhost(MenuEntry *entry);
-
+	void	customMessage(MenuEntry *entry);
+	void	smartSteering(MenuEntry *entry);
+	void	insideDrift(MenuEntry *entry);
+	void    randomItems(MenuEntry *entry);
+	void    trulyRandomItems(MenuEntry *entry);
 }
 
 #endif

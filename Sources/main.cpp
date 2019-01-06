@@ -6,7 +6,7 @@ namespace CTRPluginFramework
 
     int main()
     {
-        PluginMenu *menu = new PluginMenu("DarkFlare's MK7 NTR Plugin", 3, 3, 0);
+        PluginMenu *menu = new PluginMenu("DarkFlare's MK7 NTR Plugin", 3, 4, 1);
         menu->SynchronizeWithFrame(true);
 
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
@@ -60,6 +60,11 @@ namespace CTRPluginFramework
 		std::string sizeChanger_note = "Your kart will constantly increase and decrease in size. Use D-Pad Left and D-Pad Right to change the speed at which your kart will change size. This code can cause problems sometimes.";
 		std::string CountdownMode_note = "You will have 2 minutes to race. Every time you hit a player with an item, your time will increase by 3 seconds. You will need to strategically gain more time while still being towards the front of the pack. The player in first place when everyone's time runs out wins!";
 		std::string timeTrialGhost_note = "Please follow these steps:\n1. Activate this code and then enter the time trial with the ghost you want to view.\n2. Your kart will be out of bounds. Restart the race.\n3. Done! The code should be working.";
+		std::string customMessage_note = "When you hold D-Pad Left while sending a message in a community, it will replace your message with the message ID that you enter.";
+		std::string smartSteering_note = "Your kart will attempt to not go off the track, similarly to the MK8D feature by Nintendo.";
+		std::string insideDrift_note = "Your kart will drift inwards, like certain bikes did in Mario Kart Wii.";
+		std::string trulyRandomItems_note = "Items will be completely random, regardless of your position. The bottom screen item icon will tell you the item you were supposed to recieve, while the top screen item icon will tell you the purely random item you recieved.";
+		std::string randomItems_note = "You will be constantly given a random item.";
 
         kartcodes = new MenuFolder("Kart Codes");
 		kartcodes->Append(new MenuEntry("Invincibility", invincible, invincible_note));
@@ -71,6 +76,7 @@ namespace CTRPluginFramework
 		kartcodes->Append(new MenuEntry("Instant MiniTurbo", instantMT, instantMT_note));
 		kartcodes->Append(new MenuEntry("Huge Bunnyhop", hugeBunnyhop, hugeBunnyhop_note));
 		kartcodes->Append(new MenuEntry("Size Changer", sizeChanger, sizeChanger_note));
+		//kartcodes->Append(new MenuEntry("Smart Steering", smartSteering, smartSteering_note));
         menu->Append(kartcodes);
 		
 		speedcodes = new MenuFolder("Speed & Movement Codes");
@@ -80,6 +86,7 @@ namespace CTRPluginFramework
 		speedcodes->Append(new MenuEntry("Instant Backwards Acceleration", instantBackAcceleration, instantBackAcceleration_note));
 		speedcodes->Append(new MenuEntry("Instant Stop", instantStop, instantStop_note));
 		speedcodes->Append(new MenuEntry("Fast Reverse Speeds", fastReverse, fastReverse_note));
+		speedcodes->Append(new MenuEntry("Inside Drifing Kart", insideDrift, insideDrift_note));
 		speedcodes->Append(new MenuEntry("Stalking Hack (See Note)", stalking, stalking_note));
 		speedcodes->Append(new MenuEntry("Touch Screen Teleporter", TouchCode, TouchCode_note));
 		speedcodes->Append(new MenuEntry("Moonjump (See Note)", moonjump, moonjump_note));
@@ -90,6 +97,8 @@ namespace CTRPluginFramework
 		itemcodes = new MenuFolder("Item Codes");
 		itemcodes->Append(new MenuEntry("Item Wheel (See Note)", itemWheel, itemWheel_note));
 		itemcodes->Append(new MenuEntry("Always Have Certain Item", SetItem, SetItem_note));
+		itemcodes->Append(new MenuEntry("Cycle Completely Random Item", randomItems, randomItems_note));
+		itemcodes->Append(new MenuEntry("Truly Random Items", trulyRandomItems, trulyRandomItems_note));
 		itemcodes->Append(new MenuEntry("Drop Mushrooms (See Note)", dropMushrooms, dropMushrooms_note));
 		itemcodes->Append(new MenuEntry("Fast Blue Shell", fastBlueShell, fastBlueShell_note));
 		itemcodes->Append(new MenuEntry("Stopped Blue Shell", stoppedBlueShell, stoppedBlueShell_note));
@@ -113,6 +122,7 @@ namespace CTRPluginFramework
 		menucodes->Append(new MenuEntry("No Disconnect", NoDC, NoDC_note));
 		menucodes->Append(new MenuEntry("Fast Game/Anti-Matrix", fastGame, fastGame_note));
 		menucodes->Append(new MenuEntry("Live Time Trial Ghost Replay", timeTrialGhost, timeTrialGhost_note));
+		menucodes->Append(new MenuEntry("Send Custom Community Message", customMessage, customMessage_note));
 		menucodes->Append(new MenuEntry("VR Extender (See Note)", vrExtender, vrExtender_note));
 		menucodes->Append(new MenuEntry("Set Custom VR", SetVR, SetVR_note));
 		menucodes->Append(new MenuEntry("Random VR", randomVR, randomVR_note));
