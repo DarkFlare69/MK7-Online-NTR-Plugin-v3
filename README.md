@@ -22,7 +22,7 @@ Rev1 JPN - Fully Compatible<br/>
 
 # Usage
 
-1. Download the plugin<br/>
+1. Download the plugin from here: https://github.com/DarkFlare69/MK7-Online-NTR-Plugin-v3/raw/master/MarioKart7.3gx<br/>
 2. Place the plugin into the folder for your region:<br/><br/>
 
 USA  -  SD:/luma/plugins/0004000000030800<br/>
