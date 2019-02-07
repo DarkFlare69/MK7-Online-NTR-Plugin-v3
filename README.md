@@ -1,5 +1,5 @@
 # Mario Kart 7 NTR Plugin
-This is an online NTR plugin for Mario Kart 7. This plugin is built around CTRPluginFramework, meaning it has many new features and advantages over older NTR plugins.
+This is an online NTR plugin for Mario Kart 7. This plugin is built around CTRPluginFramework, meaning it has many new features and advantages over older NTR plugins. The official GBAtemp thread is here: https://gbatemp.net/threads/release-mario-kart-7-online-ntr-plugin.460631/<br/>
 
 # Advantages of CTRPluginFramework
 
