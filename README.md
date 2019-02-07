@@ -1,30 +1,47 @@
-# CTRPluginFramework - Blank Template
-A blank CTRPF plugin to be used by [Luma3DS with plugin loader](https://github.com/Nanquitas/Luma3DS/releases).
+# Mario Kart 7 NTR Plugin
+This is an online NTR plugin for Mario Kart 7. This plugin is built around CTRPluginFramework, meaning it has many new features and advantages over older NTR plugins.
 
-A list of [all the code types supported by the ActionReplay is available here](https://gist.github.com/Nanquitas/d6c920a59c757cf7917c2bffa76de860).
+# Advantages of CTRPluginFramework
 
-Join the discord for help: https://discord.gg/5M63VCD
-## Action Replay Usage
+-Remap buttons permanently: You can choose which button you want to use to open the menu, and it will stay even after restarting your 3DS.<br/>
+-RAM Dumper: Help debug codes by dumping your game's RAM.<br/>
+-Code searcher: Find your own cheats and use them alongside this plugin<br/>
+-Cleaner menu<br/>
+-Faster executions<br/>
+-Increased stability<br/>
+-No need to use NTR or Gateway with the latest version, just boot up 3DS and plugins will work immediately<br/>
+-Much, much more. Explore it all for yourself!<br/>
 
-[![Click to play on YouTube](https://img.youtube.com/vi/c2258P9wKkA/0.jpg)](https://www.youtube.com/watch?v=c2258P9wKkA)
+# Compatibility
+Rev0 USA - Fully Compatible<br/>
+Rev0 EUR - Fully Compatible<br/>
+Rev0 JPN - Fully Compatible<br/>
+Rev1 USA - Fully Compatible<br/>
+Rev1 EUR - Fully Compatible<br/>
+Rev1 JPN - Fully Compatible<br/>
 
+# Usage
 
-## Screenshots
+1. Download the plugin<br/>
+2. Place the plugin into the folder for your region:<br/><br/>
 
-![](https://i.imgur.com/ayvcaN0.png)
-![](https://i.imgur.com/9OJop01.png)
-##### Search
-![](https://i.imgur.com/gczUI1r.png)
-![](https://i.imgur.com/Yhhcsot.png)
-![](https://i.imgur.com/7lVmuDd.png)
-##### Action Replay
-![](https://i.imgur.com/uW6lnjm.png)
-![](https://i.imgur.com/4QAEgSO.png)
-![](https://i.imgur.com/bJFQw04.png)
-![](https://i.imgur.com/8pZhhmo.png)
-![](https://i.imgur.com/b3Gl29H.png)
-##### Hex Editor
-![](https://i.imgur.com/8z2DCcm.png)
-![](https://i.imgur.com/t3gutXU.png)
-![](https://i.imgur.com/U4ratx4.png)
-![](https://i.imgur.com/uJBJZ8K.png)
+USA   -   SD:/plugin/0004000000030800/<br/>
+EUR   -   SD:/plugin/0004000000030700/<br/>
+JPN   -   SD:/plugin/0004000000030600/<br/><br/>
+
+3. Launch NTR CFW<br/>
+4. Launch Mario Kart 7<br/>
+5. Press Select to open the cheat menu<br/>
+6. Enable cheats & have fun!<br/>
+
+# Video
+https://youtu.be/jvunqFBJyRM
+
+# Credits
+
+DarkFlare69 - Codes, plugin, & media<br/>
+Nanquitas - CTRPluginFramework & plugin help<br/>
+RyDog - Plugin help<br/>
+Mega-Mew - Codes<br/>
+Anto726 - Codes<br/>
+MrN0P93 - Codes<br/>
