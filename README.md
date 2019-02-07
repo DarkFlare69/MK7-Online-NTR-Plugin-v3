@@ -25,14 +25,17 @@ Rev1 JPN - Fully Compatible<br/>
 1. Download the plugin<br/>
 2. Place the plugin into the folder for your region:<br/><br/>
 
-USA   -   SD:/plugin/0004000000030800/<br/>
-EUR   -   SD:/plugin/0004000000030700/<br/>
-JPN   -   SD:/plugin/0004000000030600/<br/><br/>
+USA  -  SD:/luma/plugins/0004000000030800<br/>
+EUR  -  SD:/luma/plugins/0004000000030700<br/>
+JPN  -  SD:/luma/plugins/0004000000030600<br/><br/>
 
-3. Launch NTR CFW<br/>
-4. Launch Mario Kart 7<br/>
-5. Press Select to open the cheat menu<br/>
-6. Enable cheats & have fun!<br/>
+3. Download Nanquitas mod for Luma3DS that allows plugin loading from here: https://github.com/Nanquitas/Luma3DS/releases<br/>
+4. Place the boot.firm on the root of your 3DS SD Card<br/>
+4. When on the home menu, press L+Select+DPad Down to access the Luma3DS menu (or if you have a different combination, press that)<br/>
+5. Enable plugin loading. This option will stay enabled from now on, unless you turn it off.<br/>
+6. Start Mario Kart 7<br/>
+7. The plugin should load and you can access it by using the select button<br/>
+8. Enable cheats and enjoy!<br/>
 
 # Video
 https://youtu.be/jvunqFBJyRM
