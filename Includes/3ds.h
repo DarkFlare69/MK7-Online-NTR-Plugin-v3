@@ -8,6 +8,8 @@ extern "C" {
 #include "types.h"
 
 #include "ctrulib/allocator/newlibHeap.h"
+#include "ctrulib/services/ac.h"
+#include "ctrulib/services/am.h"
 #include "ctrulib/services/apt.h"
 #include "ctrulib/services/cfgu.h"
 #include "ctrulib/services/fs.h"
@@ -25,6 +27,7 @@ extern "C" {
 #include "ctrulib/result.h"
 #include "ctrulib/srv.h"
 #include "ctrulib/svc.h"
+#include "csvc.h"
 #include "ctrulib/synchronization.h"
 #include "ctrulib/thread.h"
 

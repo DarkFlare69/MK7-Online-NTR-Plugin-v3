@@ -5,29 +5,22 @@ $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>dev
 endif
 
 TOPDIR 		?= 	$(CURDIR)
-
-include $(TOPDIR)/base_rules
-include $(TOPDIR)/3ds_rules
+include $(DEVKITARM)/3ds_rules
 
 TARGET		:= 	$(notdir $(CURDIR))
+PLGINFO 	:= 	CTRPluginFramework.plgInfo
 
 BUILD		:= 	Build
 INCLUDES	:= 	Includes
 LIBDIRS		:= 	$(TOPDIR)
-SOURCES 	:= 	Sources \
-				Sources\Helpers
-				
-IP 			:=  5
-FTP_HOST 	:=	192.168.1.
-FTP_PORT	:=	"5000"
-FTP_PATH	:=	"plugin/0004000000113100/"
+SOURCES 	:= 	Sources
 
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
 ARCH		:=	-march=armv6k -mlittle-endian -mtune=mpcore -mfloat-abi=hard 
 
-CFLAGS		:=	-g -O2 -mword-relocations \
+CFLAGS		:=	-Os -mword-relocations \
 				-fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \
 				$(ARCH)
 
@@ -35,8 +28,8 @@ CFLAGS		+=	$(INCLUDE) -DARM11 -D_3DS
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 
-ASFLAGS		:=	-g $(ARCH)
-LDFLAGS		:= -pie -T $(TOPDIR)/3ds.ld $(ARCH) -O2 -Wl,-Map,$(notdir $*.map),--gc-sections 
+ASFLAGS		:=	$(ARCH)
+LDFLAGS		:= -T $(TOPDIR)/3ds.ld $(ARCH) -Os -Wl,-Map,$(notdir $*.map),--gc-sections 
 
 LIBS		:= -lCTRPluginFramework
 
@@ -47,7 +40,7 @@ LIBS		:= -lCTRPluginFramework
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 #---------------------------------------------------------------------------------
 
-export OUTPUT	:=	MarioKart7
+export OUTPUT	:=	$(CURDIR)/$(TARGET)
 export TOPDIR	:=	$(CURDIR)
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 					$(foreach dir,$(DATA),$(CURDIR)/$(dir))
@@ -65,10 +58,9 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I $(CURDIR)/$(dir) ) \
 					$(foreach dir,$(LIBDIRS),-I $(dir)/include) \
 					-I $(CURDIR)/$(BUILD)
 
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/Lib)
 
 .PHONY: $(BUILD) clean all
-
 
 #---------------------------------------------------------------------------------
 all: $(BUILD)
@@ -80,13 +72,9 @@ $(BUILD):
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ... 
-	@rm -fr $(BUILD) $(OUTPUT).plg
+	@rm -fr $(BUILD) $(OUTPUT).3gx
 
 re: clean all
-
-send:
-	@echo "Sending plugin over FTP"
-	@sendfile.py $(TARGET).plg $(FTP_PATH) "$(FTP_HOST)$(IP)" $(FTP_PORT)
 
 #---------------------------------------------------------------------------------
 
@@ -97,7 +85,7 @@ DEPENDS	:=	$(OFILES:.o=.d)
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-$(OUTPUT).plg : $(OFILES)
+$(OUTPUT).3gx : $(OFILES)
 #---------------------------------------------------------------------------------
 # you need a rule like this for each extension you use as binary data
 #---------------------------------------------------------------------------------
@@ -105,6 +93,13 @@ $(OUTPUT).plg : $(OFILES)
 #---------------------------------------------------------------------------------
 	@echo $(notdir $<)
 	@$(bin2o)
+
+#---------------------------------------------------------------------------------
+%.3gx: %.elf
+	@echo creating $(notdir $@)
+	@$(OBJCOPY) -O binary $(OUTPUT).elf $(TOPDIR)/objdump -S
+	@$(TOPDIR)/3gxtool.exe -s $(TOPDIR)/objdump $(TOPDIR)/$(PLGINFO) $@
+	@- rm $(TOPDIR)/objdump
 
 -include $(DEPENDS)
 

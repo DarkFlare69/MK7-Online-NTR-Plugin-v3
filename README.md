@@ -1,64 +1,30 @@
-# Mario Kart 7 NTR Plugin
-This is an online NTR plugin for Mario Kart 7. This plugin is built around CTRPluginFramework, meaning it has many new features and advantages over older NTR plugins.
+# CTRPluginFramework - Blank Template
+A blank CTRPF plugin to be used by [Luma3DS with plugin loader](https://github.com/Nanquitas/Luma3DS/releases).
 
-# Advantages of CTRPluginFramework
+A list of [all the code types supported by the ActionReplay is available here](https://gist.github.com/Nanquitas/d6c920a59c757cf7917c2bffa76de860).
 
--Remap buttons permanently: You can choose which button you want to use to open the menu, and it will stay even after restarting your 3DS.
+Join the discord for help: https://discord.gg/5M63VCD
+## Action Replay Usage
 
--RAM Dumper: Help debug codes by dumping your game's RAM.
+[![Click to play on YouTube](https://img.youtube.com/vi/c2258P9wKkA/0.jpg)](https://www.youtube.com/watch?v=c2258P9wKkA)
 
--Code searcher: Find your own cheats and use them alongside this plugin
 
--Cleaner menu
+## Screenshots
 
--Faster executions
-
--Increased stability
-
--Much, much more. Explore it all for yourself!
-
-# Compatibility
-Rev0 USA - Fully Compatible
-
-Rev0 EUR - Fully Compatible
-
-Rev0 JPN - Fully Compatible
-
-Rev1 USA - Fully Compatible
-
-Rev1 EUR - Fully Compatible
-
-Rev1 JPN - Fully Compatible
-
-# Usage
-
-1. Download the plugin
-2. Place the plugin into the folder for your region:
-
-USA   -   SD:/plugin/0004000000030800/
-
-EUR   -   SD:/plugin/0004000000030700/
-
-JPN   -   SD:/plugin/0004000000030600/
-
-3. Launch NTR CFW
-4. Launch Mario Kart 7
-5. Press Select to open the cheat menu
-6. Enable cheats & have fun!
-
-# Video
-https://youtu.be/jvunqFBJyRM
-
-# Credits
-
-DarkFlare69 - Codes, plugin, & media
-
-Nanquitas - libShark2NTR & plugin help
-
-RyDog - Plugin help (notes, original blank cheat menu)
-
-Mega-Mew - Codes
-
-Anto726 - Codes
-
-MrN0P93 - Codes
+![](https://i.imgur.com/ayvcaN0.png)
+![](https://i.imgur.com/9OJop01.png)
+##### Search
+![](https://i.imgur.com/gczUI1r.png)
+![](https://i.imgur.com/Yhhcsot.png)
+![](https://i.imgur.com/7lVmuDd.png)
+##### Action Replay
+![](https://i.imgur.com/uW6lnjm.png)
+![](https://i.imgur.com/4QAEgSO.png)
+![](https://i.imgur.com/bJFQw04.png)
+![](https://i.imgur.com/8pZhhmo.png)
+![](https://i.imgur.com/b3Gl29H.png)
+##### Hex Editor
+![](https://i.imgur.com/8z2DCcm.png)
+![](https://i.imgur.com/t3gutXU.png)
+![](https://i.imgur.com/U4ratx4.png)
+![](https://i.imgur.com/uJBJZ8K.png)
