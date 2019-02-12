@@ -59,6 +59,7 @@ main.o: \
  c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Utils/StringExtensions.hpp \
  c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Utils/Utils.hpp \
  c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/Unicode.h \
+ c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/3ds.h \
  c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework.hpp
 
 c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/3ds.h:
@@ -178,5 +179,7 @@ c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/U
 c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Utils/Utils.hpp:
 
 c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/Unicode.h:
+
+c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/3ds.h:
 
 c:/Users/Adam/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework.hpp:

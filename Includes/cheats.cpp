@@ -1,9 +1,13 @@
 #include "CTRPluginFramework.hpp"
 #include "Unicode.h"
+#include "csvc.h"
+#include "3ds.h"
 #include <math.h>
+#include <vector>
 
 namespace CTRPluginFramework
 {
+	using StringVector = std::vector<std::string>;
 	u32 offset = 0;
 	u32 random = 0;
 	u32 dataX = 0;
@@ -19,6 +23,8 @@ namespace CTRPluginFramework
 	static u32 x = 0;
 	static u32 y = 0;
 	static u32 z = 0;
+
+	// To do: Use IsActivated() to rewrite original values to certain codes, such as CC or speed modifiers
 
 	/////////////////////////////////////////////////////////    Start of custom functions    /////////////////////////////////////////////////////////
 
@@ -719,20 +725,47 @@ namespace CTRPluginFramework
 			alreadyGivenItem = false;
 	}
 
-	void    SetItem(MenuEntry *entry)
+	struct Item
 	{
-		static bool	shown_dialogue = false, execute = false;
-		static u8 item = 0;
-		std::string	original = "Enter your item ID (available on MK7 NTR Plugin GBAtemp Page):";
-		if (!shown_dialogue)
+		const char  *name;
+		const u8    id;
+	};
+
+	static const std::vector<Item> g_items =
+	{
+		{ "Banana", 0 },
+		{ "Green Shell", 1 },
+		{ "Red Shell", 2 },
+		{ "Mushroom", 3 },
+		{ "Bom-omb", 4 },
+		{ "Blooper", 5 },
+		{ "Blue Shell", 6 },
+		{ "Triple Mushroom", 7 },
+		{ "Star", 8 },
+		{ "Bullet Bill", 9 },
+		{ "Lightning", 0xA },
+		{ "Golden Mushroom", 0xB },
+		{ "Fire Flower", 0xC },
+		{ "Tanooki Tail", 0xD },
+		{ "Lucky-7", 0xE },
+		{ "Triple Bananas", 0x11 },
+		{ "Triple Green Shells", 0x12 },
+		{ "Triple Red Shells", 0x13 }
+	};
+
+	void SetItem(MenuEntry *entry)
+	{
+		entry->Disable();
+		static StringVector items;
+		if (items.empty())
+			for (const Item &i : g_items)
+				items.push_back(i.name);
+		Keyboard keyboard("Item Hack\n\nSelect which item you'd like to have", items);
+		int choice = keyboard.Open();
+		if (choice <= 0x13)
 		{
-			Keyboard	keyboard(original);
-			shown_dialogue = true;
-			if (keyboard.Open(item) != -1)
-				execute = true;
+			writeItem(g_items[choice].id);
 		}
-		if (execute)
-			writeItem(item);
 	}
 
 	/////////////////////////////////////////////////////////    Start of speed codes    /////////////////////////////////////////////////////////
@@ -1176,25 +1209,52 @@ namespace CTRPluginFramework
 
 	/////////////////////////////////////////////////////////    Start of menu codes    /////////////////////////////////////////////////////////
 
+	struct Speedometer
+	{
+		const char *name;
+	};
+
+	static const std::vector<Speedometer> speed =
+	{
+		{ "Kilometers per hour" },
+		{ "Miles per hour" },
+		{ "Meters per second" },
+		{ "Feet per second" },
+	};
+
 	void spedometer(MenuEntry *entry)
 	{
 		/*Multiply speed by 10.3767560664 to get km/h
 		Multiply speed by 6.44781715616 to get mph
 		Multiply speed by 2.88243188591 to get m/s
 		Multiply speed by 9.45679868984 to get feet/s*/
-		u32 g_racePointer = GetRacePointer();
-		static float speed = 0.0f, kmh = 10.3767560664f, mph = 6.44781715616f, mps = 2.88243188591f, fps = 9.45679868984f;
-		static u32 ok = 0;
-		if (!IsInRace())
+		static StringVector speeds;
+		if (speeds.empty())
+			for (const Speedometer &i : speed)
+				speeds.push_back(i.name);
+		static float multiplications[] = { 10.376756f, 6.4478171f, 2.8824318f, 9.4567986f }, base = 0;
+		static const char *units[] = { " km/h", " mph", " m/s", " f/s" };
+		Keyboard keyboard("Speedometer\n\nSelect your preferred measurement unit", speeds); 
+		static int choice = keyboard.Open();
+		static bool keyboardDone = false;
+		Process::ReadFloat(GetRacePointer() + 0xF2C, base);
+		base *= multiplications[choice];
+		if (entry->WasJustActivated() && !keyboardDone)
+		{
+			choice = keyboard.Open();
+			keyboardDone = true;
 			return;
-		if (!Process::ReadFloat(g_racePointer + 0xF2C, speed))
+		}
+		else if (!entry->IsActivated())
+		{
+			keyboardDone = false;
 			return;
-		ok = (int)(kmh * speed);
+		}
 		OSD::Run([](const Screen &screen)
 		{
 			if (!screen.IsTop)
 				return false;
-			screen.Draw(Utils::Format("%02d km/h", ok), 335, 211);
+			screen.Draw(Utils::Format("%01d", (int)base) + units[choice], 340, 211);
 			return true;
 		});
 	}
@@ -1227,6 +1287,7 @@ namespace CTRPluginFramework
 
 	void	customMessage(MenuEntry *entry)
 	{
+		entry->Disable();
 		bool in_race = IsInRace();
 		if (!in_race && Controller::IsKeyDown(Key::Left))
 		{
@@ -1264,29 +1325,16 @@ namespace CTRPluginFramework
 
 	void    SetVR(MenuEntry *entry)
 	{
-		static bool	shown_dialogue = false, execute = false;
-		static u32	vr = 0;
-		std::string	original = "Enter your desired VR (in hex):";
-		if (!shown_dialogue)
-		{
-			Keyboard	keyboard(original);
-			shown_dialogue = true;
-			if (keyboard.Open(vr) != -1)
-				execute = true;
-		}
-		if (execute)
+		entry->Disable();
+		static u32 vr = 0;
+		Keyboard	keyboard("Enter your desired VR (in hex):");
+		if (keyboard.Open(vr) != -1)
 			writeVR(vr);
 	}
 
 	void	randomVR(MenuEntry *entry)
 	{
-		u16 data16 = 0;
-		if (Process::Read16(0x14296A90, data16) && is_in_range(data16, 20000, 200000))
-		{
-			random = (data * 5);
-			if (Process::Read32(0x663D04, offset) && offset > 0x10000000)
-				writeVR(random);
-		}
+		writeVR(Utils::Random(1, 999999));
 	}
 
 	void	unlockEverything(MenuEntry *entry)
@@ -1299,6 +1347,7 @@ namespace CTRPluginFramework
 			Process::Write8(0x6BB0 + offset, 0x7F);
 			Process::Write8(0x6BB4 + offset, 0x3F);
 			Process::Write8(0x6BB8 + offset, 0xFF);
+			entry->Disable();
 		}
 	}
 
@@ -1320,6 +1369,7 @@ namespace CTRPluginFramework
 
 	void    SetFlag(MenuEntry *entry) // beta
 	{
+		entry->Disable();
 		static bool shown_dialogue = false, error = false;
 		static u16 flag;
 		std::string	original = "Enter your flag ID (available on MK7 NTR Plugin GBAtemp Page):";
@@ -1350,15 +1400,10 @@ namespace CTRPluginFramework
 
 	void    SetCoordinates(MenuEntry *entry) // beta
 	{
-		static bool	shown_dialogue = false;
-		static u32	coordinates = 0;
-		std::string	original = "Enter your globe coordinates (available on MK7 NTR Plugin GBAtemp Page):";
-		if (!shown_dialogue)
-		{
-			Keyboard	keyboard(original);
-			shown_dialogue = true;
-			if (keyboard.Open(coordinates) != -1)
-				writeLocation(coordinates);
-		}
+		entry->Disable();
+		static u32 coordinates = 0;
+		Keyboard keyboard("Enter your globe coordinates (available on MK7 NTR Plugin GBAtemp Page):");
+		if (keyboard.Open(coordinates) != -1)
+			writeLocation(coordinates);
 	}
 }
