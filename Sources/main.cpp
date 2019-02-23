@@ -1,5 +1,6 @@
 #include "3ds.h"
 #include "cheats.cpp"
+#include "additionals.cpp" // for private codes, or unreleased codes, etc. personal use
 #include "csvc.h"
 #include "CTRPluginFramework.hpp"
 #include <vector>
@@ -9,14 +10,14 @@ namespace CTRPluginFramework
 	void InitMenu(PluginMenu &menu);
 	int main(void)
 	{
-		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 NTR Plugin", 3, 6, 0, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
+		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 NTR Plugin", 3, 7, 0, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
 		menu->SynchronizeWithFrame(true);
 		InitMenu(*menu);
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
 
 		kartcodes = new MenuFolder("Kart Codes");
 		kartcodes->Append(new MenuEntry("Invincibility", invincible, "You will be invincible. You will also appear blinking on other people's screens online."));
-		kartcodes->Append(new MenuEntry("Aimbot", aimbot, "You will be invincible. You will also appear blinking on other people's screens online."));
+		kartcodes->Append(new MenuEntry("Aimbot", aimbot, "Your aim will be locked onto a specific player. Press D-Pad Up to increase player, and D-Pad Down to reset it."));
 		kartcodes->Append(new MenuEntry("Always Star Power", alwaysStarPower, "You will always have star effects, such as invincibility and color."));
 		kartcodes->Append(new MenuEntry("Always Black Kart", alwaysBlackKart, "Your kart will be black as if you got bloopered."));
 		kartcodes->Append(new MenuEntry("Always Shocked", alwaysShocked, "Your kart will always be small as if you got shocked."));
@@ -44,7 +45,7 @@ namespace CTRPluginFramework
 
 		itemcodes = new MenuFolder("Item Codes");
 		itemcodes->Append(new MenuEntry("Item Wheel", itemWheel, "-X = Bullet\n-Y = Tanooki\n-Start = Blue Shell\n-Select = Lightning\n-D-Pad Left = Lucky 7\n-D-Pad Right = Red Shell\n-D-Pad Up = Green Shell\n-D-Pad Down = Bob-Omb"));
-		itemcodes->Append(new MenuEntry("Always Have Certain Item", SetItem, "A keyboard will come up when you exit the menu and you will be allowed to enter your item ID. You can get these from the MK7 NTR Plugin GBAtemp thread."));
+		itemcodes->Append(new MenuEntry("Always Have Certain Item", SetItem, "You will be able to choose the item you want when exiting the menu."));
 		itemcodes->Append(new MenuEntry("Cycle Completely Random Item", randomItems, "You will be constantly given a random item."));
 		itemcodes->Append(new MenuEntry("Truly Random Items", trulyRandomItems, "Items will be completely random, regardless of your position. The bottom screen item icon will tell you the item you were supposed to recieve, while the top screen item icon will tell you the purely random item you recieved."));
 		itemcodes->Append(new MenuEntry("Drop Mushrooms", dropMushrooms, "This code replaces green shells with droppable mushrooms. Throw a 'green shell' to drop a mushroom."));
@@ -64,7 +65,7 @@ namespace CTRPluginFramework
 		coursecodes->Append(new MenuEntry("Water Everywhere", waterEverywhere, "You will always be underwater."));
 		menu->Append(coursecodes);
 
-		menucodes = new MenuFolder("Menu Codes");
+		menucodes = new MenuFolder("Menu & Other Codes");
 		menucodes->Append(new MenuEntry("No Countdown", noCountdown, "You will be able to drive when the countdown normally would be happening."));
 		menucodes->Append(new MenuEntry("Speedometer", spedometer, "You will be able to see your current speed in your preferred unit."));
 		menucodes->Append(new MenuEntry("Disable First Person View", disableFirstPersonView, "You will not be able to activate first person view by pressing Up on the D-Pad."));
@@ -153,6 +154,5 @@ exit:
         ToggleTouchscreenForceOn();
     }
 
-    void    InitMenu(PluginMenu &menu){}
-
+    void    InitMenu(PluginMenu &menu) {}
 }

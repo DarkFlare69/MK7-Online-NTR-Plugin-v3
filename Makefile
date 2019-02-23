@@ -18,7 +18,7 @@ SOURCES 	:= 	Sources
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH		:=	-march=armv6k -mlittle-endian -mtune=mpcore -mfloat-abi=hard 
+ARCH		:=	-march=armv6k -mlittle-endian -mtune=mpcore -mfloat-abi=hard -mtp=soft
 
 CFLAGS		:=	-Os -mword-relocations \
 				-fomit-frame-pointer -ffunction-sections -fno-strict-aliasing \

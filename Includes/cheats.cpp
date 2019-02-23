@@ -30,14 +30,14 @@ namespace CTRPluginFramework
 
 	bool is_in_range(u32 value, u32 lowerbound, u32 upperbound)
 	{
-		return (value > lowerbound && value < upperbound);
+		return value > lowerbound && value < upperbound;
 	}
 
 	bool IsInRace()
 	{
 		if (Process::Read32(0x14000084, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 			if (Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
-				return (Process::Read32(offset + 0x118, offset) && (offset & 0xFF));
+				return Process::Read32(offset + 0x118, offset) && (offset & 0xFF);
 	}
 
 	u32 GetRacePointer()
@@ -159,12 +159,16 @@ namespace CTRPluginFramework
 		}
 	}
 
+	static u32 original_speed[0x2D];
+
 	void	writeSpeed(u32 speed)
 	{
 		for (int i = 0; i < 0x2D; i++)
 		{
 			if (Process::Read32(0x140002F4, offset) && is_in_range(offset, 0x14000000, 0x18000000) && Process::Read32(offset - 0xA4, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 			{
+				if (original_speed[2] != speed)
+					Process::Read32((offset - 0x2C3B0) + (i * 4), original_speed[i]);
 				Process::Write32((offset - 0x2C3B0) + (i * 4), speed);
 				Process::Write32((offset - 0x28E90) + (i * 4), speed);
 				Process::Write32((offset - 0x1C730) + (i * 4), speed);
@@ -247,16 +251,25 @@ namespace CTRPluginFramework
 	{
 		Process::Write32(0x665634, 0);
 		Process::Write32(0x665638, 0);
+		if (!entry->IsActivated())
+		{
+			Process::Write32(0x665634, 0x435C0000);
+			Process::Write32(0x665638, 0x43E60000);
+		}
 	}
 
 	void	hugeBunnyhop(MenuEntry *entry)
 	{
 		Process::Write32(0x6655D0, 0x40400000);
+		if (!entry->IsActivated())
+			Process::Write32(0x6655D0, 0x3FA66666);
 	}
 
 	void	fastReverse(MenuEntry *entry)
 	{
 		Process::Write32(0x6655A8, 0x41800000);
+		if (!entry->IsActivated())
+			Process::Write32(0x6655A8, 0x40400000);
 	}
 
 	void	noCountdown(MenuEntry *entry)
@@ -301,15 +314,9 @@ namespace CTRPluginFramework
 
 	void	insideDrift(MenuEntry *entry) // untested
 	{
-		// 006655F0 40800000
-		bool in_race = IsInRace();
-		u32 original = 0, tmp = 0;
-		if (Process::Read32(0x6655F0, tmp) && tmp != 0x40800000)
-			original = tmp;
-		if (in_race && Controller::IsKeyDown(R))
-			Process::Write32(0x6655F0, 0x40800000);
-		else if (original != 0)
-			Process::Write32(0x6655F0, original);
+		Process::Write32(0x6655F0, 0x40800000);
+		if (!entry->IsActivated())
+			Process::Write32(0x6655F0, 0x3F19999A);
 	}
 
 	void	maxTimer(MenuEntry *entry)
@@ -592,21 +599,29 @@ namespace CTRPluginFramework
 	void	fastBlueShell(MenuEntry *entry)
 	{
 		Process::Write32(0x666094, 0x43000000);
+		if (!entry->IsActivated())
+			Process::Write32(0x666094, 0x41A00000);
 	}
 
 	void	stoppedBlueShell(MenuEntry *entry)
 	{
 		Process::Write32(0x666094, 0);
+		if (!entry->IsActivated())
+			Process::Write32(0x666094, 0x41A00000);
 	}
 
 	void	fastGreenShell(MenuEntry *entry)
 	{
 		Process::Write32(0x66619C, 0x43000000);
+		if (!entry->IsActivated())
+			Process::Write32(0x66619C, 0x41300000);
 	}
 
 	void	stoppedGreenShell(MenuEntry *entry)
 	{
 		Process::Write32(0x66619C, 0);
+		if (!entry->IsActivated())
+			Process::Write32(0x66619C, 0x41300000);
 	}
 
 	void	dropMushrooms(MenuEntry *entry)
@@ -798,16 +813,34 @@ namespace CTRPluginFramework
 	void	TwoHundredCC(MenuEntry *entry)
 	{
 		writeSpeed(0x413C0000);
+		if (!entry->IsActivated() && original_speed[5] > 0x30000000)
+		{
+			for (int i = 0; i < 0x2D; i++)
+			{
+				Process::Write32((offset - 0x2C3B0) + (i * 4), original_speed[i]);
+				Process::Write32((offset - 0x28E90) + (i * 4), original_speed[i]);
+				Process::Write32((offset - 0x1C730) + (i * 4), original_speed[i]);
+			}
+		}
 	}
 
 	void	FiveHundredCC(MenuEntry *entry)
 	{
 		writeSpeed(0x41A00000);
+		if (!entry->IsActivated() && original_speed[5] > 0x30000000)
+		{
+			for (int i = 0; i < 0x2D; i++)
+			{
+				Process::Write32((offset - 0x2C3B0) + (i * 4), original_speed[i]);
+				Process::Write32((offset - 0x28E90) + (i * 4), original_speed[i]);
+				Process::Write32((offset - 0x1C730) + (i * 4), original_speed[i]);
+			}
+		}
 	}
 
 	/////////////////////////////////////////////////////////    Start of game modes    /////////////////////////////////////////////////////////
 
-	void	eliminationMode(MenuEntry *entry)
+	void	eliminationMode(MenuEntry *entry) // credit to fish for the original asm code
 	{
 		Process::Write32(0x468D1C, 0xE1A00000);
 		Process::Write32(0x469154, 0xE1A00000);
@@ -1146,7 +1179,7 @@ namespace CTRPluginFramework
 		bool in_race = IsInRace();
 		u8 boost = 0;
 		u32 g_racePointer = GetRacePointer();
-		static float gravity = 0, speed = 0;
+		static float speed = 0;
 		writeSpeed(0x41400000); // speed
 		Process::Write32(0x6655FC, 0x3E4CCCCD); // drift at lower speeds
 		Process::Write32(0x666094, 0x42000000); // faster blue shell
@@ -1160,7 +1193,7 @@ namespace CTRPluginFramework
 			speed = 5.f;
 			Process::WriteFloat(g_racePointer + 0xF2C, speed);
 		}
-		else if (Controller::IsKeyDown(R) && Controller::IsKeyDown(B) && Controller::IsKeyDown(A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 1.5f && speed < 5.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost == 0) // if pressing R and B and in race and speed > 1.5f and not in boost
+		else if (Controller::IsKeyDown(R) && Controller::IsKeyDown(B) && Controller::IsKeyDown(A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 1.5f && speed < 5.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost == 0) // if pressing R and B and in race and speed > 1.5f and y in boost
 		{
 			Process::ReadFloat(g_racePointer + 0xF2C, speed);
 			speed += 1.5f;
@@ -1181,7 +1214,7 @@ namespace CTRPluginFramework
 		bool in_race = IsInRace();
 		u8 boost = 0;
 		u32 g_racePointer = GetRacePointer();
-		static float gravity = 0, speed = 0;
+		static float speed = 0;
 		writeSpeed(0x41A00000); // speed
 		Process::Write32(0x6655FC, 0x3E4CCCCD); // drift at lower speeds
 		Process::Write32(0x666094, 0x42555555); // faster blue shell
@@ -1235,7 +1268,7 @@ namespace CTRPluginFramework
 		static float multiplications[] = { 10.376756f, 6.4478171f, 2.8824318f, 9.4567986f }, base = 0;
 		static const char *units[] = { " km/h", " mph", " m/s", " f/s" };
 		Keyboard keyboard("Speedometer\n\nSelect your preferred measurement unit", speeds); 
-		static int choice = keyboard.Open();
+		static int choice;
 		static bool keyboardDone = false;
 		Process::ReadFloat(GetRacePointer() + 0xF2C, base);
 		base *= multiplications[choice];
@@ -1287,10 +1320,10 @@ namespace CTRPluginFramework
 
 	void	customMessage(MenuEntry *entry)
 	{
-		entry->Disable();
 		bool in_race = IsInRace();
 		if (!in_race && Controller::IsKeyDown(Key::Left))
 		{
+			entry->Disable();
 			static bool shown_dialogue = false;
 			static u8 messageID = 0;
 			std::string	original = "Enter the message ID (0 - 255):";
