@@ -8,23 +8,8 @@
 namespace CTRPluginFramework
 {
 	using StringVector = std::vector<std::string>;
-	u32 offset = 0;
-	u32 random = 0;
-	u32 dataX = 0;
-	u32 dataY = 0;
-	u32 dataZ = 0;
-	u32 data = 0;
-	u32 g_racePointer;
-	u32 g_raceCondition;
-	u32 g_FNsPointer;
-	u32 g_oldRacePointer5CC;
-	u32 g_oldRacePointer5D0;
-	u32 g_itemPointer;
-	static u32 x = 0;
-	static u32 y = 0;
-	static u32 z = 0;
-
-	// To do: Use IsActivated() to rewrite original values to certain codes, such as CC or speed modifiers
+	u32 offset = 0, data = 0, g_FNsPointer = 0, g_oldRacePointer5CC = 0, g_oldRacePointer5D0 = 0, g_itemPointer = 0;
+	static u32 original_speed[0x2D];
 
 	/////////////////////////////////////////////////////////    Start of custom functions    /////////////////////////////////////////////////////////
 
@@ -38,6 +23,7 @@ namespace CTRPluginFramework
 		if (Process::Read32(0x14000084, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 			if (Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 				return Process::Read32(offset + 0x118, offset) && (offset & 0xFF);
+		return 0;
 	}
 
 	u32 GetRacePointer()
@@ -97,6 +83,7 @@ namespace CTRPluginFramework
 				if (Process::Read32(offset + 0x23C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 					if (Process::Read8(offset - 0xF28, total) && is_in_range(offset, 0x14000000, 0x18000000))
 						return total;
+		return 0;
 	}
 
 	u16	GetTime()
@@ -112,6 +99,7 @@ namespace CTRPluginFramework
 			else
 				return 300 - time;
 		}
+		return 0;
 	}
 
 	u16	GetMinutes()
@@ -158,8 +146,6 @@ namespace CTRPluginFramework
 			Process::Write32(g_itemPointer + 0xD8, 0x3F800000);
 		}
 	}
-
-	static u32 original_speed[0x2D];
 
 	void	writeSpeed(u32 speed)
 	{
@@ -643,6 +629,14 @@ namespace CTRPluginFramework
 			Process::Write8(g_racePointer + 0xC32, 64);
 	}
 
+	void	driveOOB(MenuEntry *entry)
+	{
+		u32 g_racePointer = GetRacePointer();
+		bool in_race = IsInRace();
+		if (in_race && is_in_range(g_racePointer, 0x14000000, 0x18000000))
+			Process::Write8(g_racePointer + 0xC30, 0);
+	}
+
 	void	disableStarMusic(MenuEntry *entry)
 	{
 		u32 g_FNsPointer = GetFNsPointer();
@@ -770,7 +764,6 @@ namespace CTRPluginFramework
 
 	void SetItem(MenuEntry *entry)
 	{
-		entry->Disable();
 		static StringVector items;
 		if (items.empty())
 			for (const Item &i : g_items)
@@ -1172,10 +1165,6 @@ namespace CTRPluginFramework
 
 	void	TwoHundredCCStable(MenuEntry *entry)
 	{
-		// Fast falling: yes
-		// Brake drifting: yes
-		// Drift at lower speeds? yes
-		// items? give me a few minutes im lazy
 		bool in_race = IsInRace();
 		u8 boost = 0;
 		u32 g_racePointer = GetRacePointer();
@@ -1188,12 +1177,12 @@ namespace CTRPluginFramework
 
 		if (!in_race)
 			return;
-		if (Controller::IsKeyDown(R) && Controller::IsKeyDown(B) && Controller::IsKeyDown(A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 2.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost != 0) // if pressing B and R and in race and in boost
+		if (Controller::IsKeysDown(R + B + A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 2.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost != 0) // if pressing B and R and in race and in boost
 		{
 			speed = 5.f;
 			Process::WriteFloat(g_racePointer + 0xF2C, speed);
 		}
-		else if (Controller::IsKeyDown(R) && Controller::IsKeyDown(B) && Controller::IsKeyDown(A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 1.5f && speed < 5.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost == 0) // if pressing R and B and in race and speed > 1.5f and y in boost
+		else if (Controller::IsKeysDown(R + B + A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 1.5f && speed < 5.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost == 0) // if pressing R and B and in race and speed > 1.5f and y in boost
 		{
 			Process::ReadFloat(g_racePointer + 0xF2C, speed);
 			speed += 1.5f;
@@ -1208,9 +1197,6 @@ namespace CTRPluginFramework
 
 	void	FiveHundredCCStable(MenuEntry *entry)
 	{
-		// Fast falling: yes
-		// Brake drifting: yes
-		// Drift at lower speeds? yes
 		bool in_race = IsInRace();
 		u8 boost = 0;
 		u32 g_racePointer = GetRacePointer();
@@ -1222,12 +1208,12 @@ namespace CTRPluginFramework
 		Process::Write32(0x6655A4, 0x41A00000); // faster bullet
 		if (!in_race)
 			return;
-		if (Controller::IsKeyDown(R) && Controller::IsKeyDown(B) && Controller::IsKeyDown(A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 2.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost != 0) // if pressing B and R and in race and in boost
+		if (Controller::IsKeysDown(R + B + A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 2.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost != 0) // if pressing B and R and in race and in boost
 		{
 			speed = 7.f;
 			Process::WriteFloat(g_racePointer + 0xF2C, speed);
 		}
-		else if (Controller::IsKeyDown(R) && Controller::IsKeyDown(B) && Controller::IsKeyDown(A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 1.5f && speed < 5.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost == 0) // if pressing R and B and in race and speed > 1.5f and not in boost
+		else if (Controller::IsKeysDown(R + B + A) && GetTime() != 0 && Process::ReadFloat(g_racePointer + 0xF2C, speed) && speed > 1.5f && speed < 5.5f && Process::Read8(g_racePointer + 0xF9C, boost) && boost == 0) // if pressing R and B and in race and speed > 1.5f and not in boost
 		{
 			Process::ReadFloat(g_racePointer + 0xF2C, speed);
 			speed += 1.5f;
@@ -1241,6 +1227,52 @@ namespace CTRPluginFramework
 	}
 
 	/////////////////////////////////////////////////////////    Start of menu codes    /////////////////////////////////////////////////////////
+
+	struct Mii
+	{
+		std::string player;
+		const u8 playerSlot;
+	};
+	
+	void    miiDumper(MenuEntry *entry)
+	{
+		std::vector<std::string> names(8);
+		std::string input;
+		StringVector miis;
+		Process::Read32(0x663C90, offset);
+		Process::Read32(offset + 0x2B8, offset);
+		for (int player = 0; player < 8; player++) // GetTotalPlayers()
+			Process::ReadString(offset + 0x6E6 + (player * 0xA8), names[player], 0x14, StringFormat::Utf16);
+		std::vector<Mii> g_miis =
+		{
+			{ names[0], 0 },
+			{ names[1], 1 },
+			{ names[2], 2 },
+			{ names[3], 3 },
+			{ names[4], 4 },
+			{ names[5], 5 },
+			{ names[6], 6 },
+			{ names[7], 7 },
+		};
+		if (miis.empty())
+			for (const Mii &i : g_miis)
+				miis.push_back(i.player);
+		File file;
+		Directory dir("miis", true);
+		Keyboard kb("Mii Dumper\n\nName the file for the dump of the Mii.");
+		Keyboard keyboard("Mii Dumper\n\nSelect which player's Mii you'd like to dump", miis);
+		int choice = keyboard.Open();
+		if (choice == -1)
+			return;
+		if (kb.Open(input) != -1 && choice != -1)
+			if (dir.OpenFile(file, input + ".3dsmii", File::RWC) == 0)
+				if (!file.Dump(offset + 0x6CC + (g_miis[choice].playerSlot * 0xA8), 0x5C))
+					MessageBox("Mii dumped to:\n" + file.GetFullName() + "\nNow, use \"3DS Mii Edit Tool\" to import this Mii into your CFL_DB.dat file.")();
+				else
+					MessageBox("Error\nMii dump failed. Offset:" + offset)();
+		file.Flush();
+		file.Close();
+	}
 
 	struct Speedometer
 	{
@@ -1358,11 +1390,9 @@ namespace CTRPluginFramework
 
 	void    SetVR(MenuEntry *entry)
 	{
-		entry->Disable();
-		static u32 vr = 0;
 		Keyboard	keyboard("Enter your desired VR (in hex):");
-		if (keyboard.Open(vr) != -1)
-			writeVR(vr);
+		if (keyboard.Open(data) != -1)
+			writeVR(data);
 	}
 
 	void	randomVR(MenuEntry *entry)
@@ -1402,7 +1432,6 @@ namespace CTRPluginFramework
 
 	void    SetFlag(MenuEntry *entry) // beta
 	{
-		entry->Disable();
 		static bool shown_dialogue = false, error = false;
 		static u16 flag;
 		std::string	original = "Enter your flag ID (available on MK7 NTR Plugin GBAtemp Page):";
@@ -1433,7 +1462,6 @@ namespace CTRPluginFramework
 
 	void    SetCoordinates(MenuEntry *entry) // beta
 	{
-		entry->Disable();
 		static u32 coordinates = 0;
 		Keyboard keyboard("Enter your globe coordinates (available on MK7 NTR Plugin GBAtemp Page):");
 		if (keyboard.Open(coordinates) != -1)
