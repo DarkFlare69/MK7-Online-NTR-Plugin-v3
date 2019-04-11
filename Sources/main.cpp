@@ -10,7 +10,7 @@ namespace CTRPluginFramework
 	void InitMenu(PluginMenu &menu);
 	int main(void)
 	{
-		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 Plugin", 3, 8, 0, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
+		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 Plugin", 3, 8, 1, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
 		menu->SynchronizeWithFrame(true);
 		InitMenu(*menu);
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
@@ -73,7 +73,7 @@ namespace CTRPluginFramework
 		menucodes->Append(new MenuEntry("No Disconnect", NoDC, "You will not get disconnected unless the cause of the disconnection is an actual network problem."));
 		menucodes->Append(new MenuEntry("Fast Game/Anti-Matrix", fastGame, "The game will move at a very fast speed. Unstable, use at your own risk!"));
 		menucodes->Append(new MenuEntry("Live Time Trial Ghost Replay", timeTrialGhost, "This code will let you view any ghost. Please follow these steps:\n1. Activate this code and then enter the time trial with the ghost you want to view.\n2. Your kart will be out of bounds. Restart the race.\n3. Done! The code should be working."));
-		menucodes->Append(new MenuEntry("Send Custom Community Message", customMessage, "When you hold D-Pad Left while sending a message in a community, it will replace your message with the message ID that you enter."));
+		//menucodes->Append(new MenuEntry("Send Custom Community Message", customMessage, "When you hold D-Pad Left while sending a message in a community, it will replace your message with the message ID that you enter."));
 		menucodes->Append(new MenuEntry("VR Extender", vrExtender, "-Start = 999999\n-Select = 420000\n-D-Pad Down = 0\n-D-Pad Up = 696969\n-D-Pad Right = 666666\n-D-Pad Left = 777777"));
 		menucodes->Append(new MenuEntry("Set Custom VR", nullptr, SetVR, "A keyboard will come up when you exit the menu and you will be allowed to enter your desired VR, between 0 and 999999 (Be sure to enter values in hexadecimal)"));
 		menucodes->Append(new MenuEntry("Random VR", randomVR, "A random VR value between 1 and 999999 will be generated."));

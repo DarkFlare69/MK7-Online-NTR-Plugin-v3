@@ -1321,16 +1321,14 @@ namespace CTRPluginFramework
 		-You must enter a race and then exit/finish/restart the race in order for this to take effect
 		-Having this enabled for more than 1 race will crash the game, unless you click restart and not exit or next course or anything else.
 		*/
-		u32 pointer = 0;
-		bool in_race = IsInRace();
-		if (Process::Read32(0xFFFF5D4, pointer) && Process::Read32(pointer - 4, pointer) && Process::Read32(pointer + 0x18, pointer))
+		if (Process::Read32(0xFFFF5D4, data) && Process::Read32(data - 4, data) && Process::Read32(data + 0x18, data))
 		{
 			if (Process::Read32(0x14000084, offset) && Process::Read32(offset + 0x316C, offset) && is_in_range(offset, 0x14000000, 0x18000000))
 			{
 				Process::Write8(offset + 0x119, 0);
-				Process::Write32(pointer + 0x208, 0x10001);
-				if (in_race && Process::Read32(0x65DA44, pointer) && Process::Read32(pointer + 0x20E0, pointer))
-					Process::Write32(pointer + 0x24, 0x49000000);
+				Process::Write32(data + 0x208, 0x10001);
+				if (IsInRace() && Process::Read32(0x65DA44, data) && Process::Read32(data + 0x20E0, data))
+					Process::Write32(data + 0x24, 0x49000000);
 			}
 		}
 	}
@@ -1356,21 +1354,18 @@ namespace CTRPluginFramework
 
 	void	vrExtender(MenuEntry *entry)
 	{
-		if (Process::Read32(0x663D04, offset) && offset > 0x10000000)
-		{
-			if (Controller::IsKeyDown(Start))
-				writeVR(999999);
-			if (Controller::IsKeyDown(Select))
-				writeVR(420000);
-			if (Controller::IsKeyDown(DPadDown))
-				writeVR(0);
-			if (Controller::IsKeyDown(DPadUp))
-				writeVR(696969);
-			if (Controller::IsKeyDown(DPadRight))
-				writeVR(666666);
-			if (Controller::IsKeyDown(DPadLeft))
-				writeVR(777777);
-		}
+		if (Controller::IsKeyDown(Start))
+			writeVR(999999);
+		if (Controller::IsKeyDown(Select))
+			writeVR(420000);
+		if (Controller::IsKeyDown(DPadDown))
+			writeVR(0);
+		if (Controller::IsKeyDown(DPadUp))
+			writeVR(696969);
+		if (Controller::IsKeyDown(DPadRight))
+			writeVR(666666);
+		if (Controller::IsKeyDown(DPadLeft))
+			writeVR(777777);
 	}
 
 	void    SetVR(MenuEntry *entry)
