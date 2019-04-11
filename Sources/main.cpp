@@ -10,7 +10,7 @@ namespace CTRPluginFramework
 	void InitMenu(PluginMenu &menu);
 	int main(void)
 	{
-		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 Plugin", 3, 7, 0, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
+		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 Plugin", 3, 8, 0, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
 		menu->SynchronizeWithFrame(true);
 		InitMenu(*menu);
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
@@ -63,7 +63,6 @@ namespace CTRPluginFramework
 		coursecodes->Append(new MenuEntry("CPU Brawl", cpuBrawl, "The CPU will on top of each other, fighting."));
 		coursecodes->Append(new MenuEntry("Max Timer", maxTimer, "The timer will freeze at 4:59.9xx."));
 		coursecodes->Append(new MenuEntry("Water Everywhere", waterEverywhere, "You will always be underwater."));
-		coursecodes->Append(new MenuEntry("Drive Out of Bounds", driveOOB, "You will be able to drive out of bounds."));
 		menu->Append(coursecodes);
 
 		menucodes = new MenuFolder("Menu & Other Codes");

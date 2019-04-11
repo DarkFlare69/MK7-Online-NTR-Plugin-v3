@@ -629,14 +629,6 @@ namespace CTRPluginFramework
 			Process::Write8(g_racePointer + 0xC32, 64);
 	}
 
-	void	driveOOB(MenuEntry *entry)
-	{
-		u32 g_racePointer = GetRacePointer();
-		bool in_race = IsInRace();
-		if (in_race && is_in_range(g_racePointer, 0x14000000, 0x18000000))
-			Process::Write8(g_racePointer + 0xC30, 0);
-	}
-
 	void	disableStarMusic(MenuEntry *entry)
 	{
 		u32 g_FNsPointer = GetFNsPointer();
@@ -679,46 +671,39 @@ namespace CTRPluginFramework
 
 	void	itemWheel(MenuEntry *entry)
 	{
-		u32 g_itemPointer = GetItemPointer();
-		bool in_race = IsInRace();
-		if (in_race && is_in_range(g_itemPointer, 0x14000000, 0x18000000))
-		{
-			if (Controller::IsKeyDown(X))
-				writeItem(9);
-			if (Controller::IsKeyDown(Y))
-				writeItem(13);
-			if (Controller::IsKeyDown(Start))
-				writeItem(6);
-			if (Controller::IsKeyDown(Select))
-				writeItem(10);
-			if (Controller::IsKeyDown(DPadLeft))
-				writeItem(14);
-			if (Controller::IsKeyDown(DPadRight))
-				writeItem(2);
-			if (Controller::IsKeyDown(DPadDown))
-				writeItem(4);
-			if (Controller::IsKeyDown(DPadUp))
-				writeItem(1);
-		}
+		if (Controller::IsKeyDown(X))
+			writeItem(9);
+		if (Controller::IsKeyDown(Y))
+			writeItem(13);
+		if (Controller::IsKeyDown(Start))
+			writeItem(6);
+		if (Controller::IsKeyDown(Select))
+			writeItem(10);
+		if (Controller::IsKeyDown(DPadLeft))
+			writeItem(14);
+		if (Controller::IsKeyDown(DPadRight))
+			writeItem(2);
+		if (Controller::IsKeyDown(DPadDown))
+			writeItem(4);
+		if (Controller::IsKeyDown(DPadUp))
+			writeItem(1);
 	}
 
 	void    randomItems(MenuEntry *entry)
 	{
-		int randNumber = rand() % 14;
-		if (randNumber == 0xF || randNumber == 0x10)
-			randNumber = rand() % 14;
-		writeItem(randNumber);
+		int x = Utils::Random(0, 0x14);
+		writeItem(x == 0xF || x == 0x10 ? Utils::Random(0, 0xE) : x);
 	}
 
 	void    trulyRandomItems(MenuEntry *entry)
 	{
 		// 16EF7052 is 16 bit
 		// Process::Read32(0x14000074, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read32(tmp2 - 0x1B5C, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read16(tmp2 + 0x882, tmp3) && tmp3 == 1
-		u32 randNumber = rand() % 14, g_itemPointer = GetItemPointer(), tmp = 0, tmp2 = 0;
+		u32 randNumber = Utils::Random(0, 0x14), g_itemPointer = GetItemPointer(), tmp = 0, tmp2 = 0;
 		u16 tmp3 = 0;
 		bool in_race = IsInRace(), alreadyGivenItem = false;
 		if (randNumber == 0xF || randNumber == 0x10)
-			randNumber = rand() % 14;
+			randNumber = Utils::Random(0, 0xE);
 		if (!alreadyGivenItem && in_race && is_in_range(g_itemPointer, 0x14000000, 0x18000000) && Process::Read32(g_itemPointer + 0x3C, tmp) && is_in_range(tmp, 0, 4) && Process::Read32(g_itemPointer + 0xC8, tmp2) && tmp2 != 0xFFFFFFFF && Process::Read32(0x14000074, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read32(tmp2 - 0x1B5C, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read16(tmp2 + 0x882, tmp3) && tmp3 == 1)
 		{
 			if ((randNumber == 7 || randNumber == 0x11 || randNumber == 0x12 || randNumber == 0x13) && tmp == 1)
