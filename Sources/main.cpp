@@ -10,7 +10,7 @@ namespace CTRPluginFramework
 	void InitMenu(PluginMenu &menu);
 	int main(void)
 	{
-		PluginMenu *menu = new PluginMenu("DarkFlare's MK7 Plugin", 3, 8, 1, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
+		PluginMenu *menu = new PluginMenu("DarkFlare's Online MK7 Plugin", 3, 8, 2, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
 		menu->SynchronizeWithFrame(true);
 		InitMenu(*menu);
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
@@ -47,13 +47,14 @@ namespace CTRPluginFramework
 		itemcodes->Append(new MenuEntry("Item Wheel", itemWheel, "-X = Bullet\n-Y = Tanooki\n-Start = Blue Shell\n-Select = Lightning\n-D-Pad Left = Lucky 7\n-D-Pad Right = Red Shell\n-D-Pad Up = Green Shell\n-D-Pad Down = Bob-Omb"));
 		itemcodes->Append(new MenuEntry("Always Have Certain Item", nullptr, SetItem, "You will be able to choose the item you want when exiting the menu."));
 		itemcodes->Append(new MenuEntry("Cycle Completely Random Item", randomItems, "You will be constantly given a random item."));
+		//itemcodes->Append(new MenuEntry("Rapidfire", rapidfire, "Items will fire very quickly. Throw an item to toggle enable/disable."));
 		itemcodes->Append(new MenuEntry("Truly Random Items", trulyRandomItems, "Items will be completely random, regardless of your position. The bottom screen item icon will tell you the item you were supposed to recieve, while the top screen item icon will tell you the purely random item you recieved."));
 		itemcodes->Append(new MenuEntry("Drop Mushrooms", dropMushrooms, "This code replaces green shells with droppable mushrooms. Throw a 'green shell' to drop a mushroom."));
 		itemcodes->Append(new MenuEntry("Fast Blue Shell", fastBlueShell, "Blue shells will go very fast."));
 		itemcodes->Append(new MenuEntry("Stopped Blue Shell", stoppedBlueShell, "Blue shells will not move after being thrown."));
 		itemcodes->Append(new MenuEntry("Fast Green Shell", fastGreenShell, "Green shells will go very fast."));
 		itemcodes->Append(new MenuEntry("Stopped Green Shell", stoppedGreenShell, "Green shells will not move after being thrown."));
-		itemcodes->Append(new MenuEntry("Control Bullet", bulletControl, "You will be able to control your bullets.")); // make sure to update this with the controls after adding controls to bullet
+		itemcodes->Append(new MenuEntry("Control Bullet", bulletControl, "You will be able to control your bullets.\n-Start + Right = Enable\n-Start + Left = Disable"));
 		itemcodes->Append(new MenuEntry("Bullet Speed Modifier", bulletSpeed, "-X = Very Fast\n-B = Stopped\n-A = Normal Speed"));
 		itemcodes->Append(new MenuEntry("Blue Shell Ride", blueShellRide, "-D-Pad Left = Enable\nYou will warp to a blue shell and ride it."));
 		itemcodes->Append(new MenuEntry("Disable Star Music", disableStarMusic, "The star music won't play when you're in a star."));
@@ -73,7 +74,6 @@ namespace CTRPluginFramework
 		menucodes->Append(new MenuEntry("No Disconnect", NoDC, "You will not get disconnected unless the cause of the disconnection is an actual network problem."));
 		menucodes->Append(new MenuEntry("Fast Game/Anti-Matrix", fastGame, "The game will move at a very fast speed. Unstable, use at your own risk!"));
 		menucodes->Append(new MenuEntry("Live Time Trial Ghost Replay", timeTrialGhost, "This code will let you view any ghost. Please follow these steps:\n1. Activate this code and then enter the time trial with the ghost you want to view.\n2. Your kart will be out of bounds. Restart the race.\n3. Done! The code should be working."));
-		//menucodes->Append(new MenuEntry("Send Custom Community Message", customMessage, "When you hold D-Pad Left while sending a message in a community, it will replace your message with the message ID that you enter."));
 		menucodes->Append(new MenuEntry("VR Extender", vrExtender, "-Start = 999999\n-Select = 420000\n-D-Pad Down = 0\n-D-Pad Up = 696969\n-D-Pad Right = 666666\n-D-Pad Left = 777777"));
 		menucodes->Append(new MenuEntry("Set Custom VR", nullptr, SetVR, "A keyboard will come up when you exit the menu and you will be allowed to enter your desired VR, between 0 and 999999 (Be sure to enter values in hexadecimal)"));
 		menucodes->Append(new MenuEntry("Random VR", randomVR, "A random VR value between 1 and 999999 will be generated."));
