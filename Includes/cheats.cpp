@@ -335,77 +335,108 @@ namespace CTRPluginFramework
 		}
 	}
 
-	void	stalking(MenuEntry *entry)
+	/*void	stalking(MenuEntry *entry)
 	{
-		u32 g_racePointer = GetRacePointer(), tempActive = 0;
+		u32 tempActive = 0;
 		static unsigned int pointer = 0, active = 0, player = 1;
 		float dataY = 0, dataZ = 0;
 		static bool held = false;
-		bool in_race = IsInRace();
-		if (!in_race)
+
+		if (!IsInRace())
 		{
 			player = 1;
 			active = 0;
 			pointer = 0;
 			return;
 		}
+		if (!Controller::IsKeyDown(Y))
+			held = false;
 		else
 		{
-			if (!Controller::IsKeyDown(Y))
-				held = false;
-			else
+			tempActive = 1;
+			if (Controller::IsKeyDown(DPadUp))
+				active = 1;
+			if (Controller::IsKeyDown(DPadDown))
 			{
-				tempActive = 1;
-				if (Controller::IsKeyDown(DPadUp))
-					active = 1;
-				if (Controller::IsKeyDown(DPadDown))
-				{
-					active = 0;
-					player = 1;
-				}
-				if (!held)
-				{
-					if (Controller::IsKeyDown(DPadRight))
-					{
-						held = true;
-						player++;
-					}
-					if (Controller::IsKeyDown(DPadLeft))
-					{
-						held = true;
-						player--;
-					}
-				}
+				active = 0;
+				player = 1;
 			}
-			if (active == 1 || tempActive == 1)
+			if (!held)
 			{
-				if (player > 8 || player < 1)
+				if (Controller::IsKeyDown(DPadRight))
 				{
-					player = 1;
-					return;
-				}
-				Process::Read32(0x65DA44, data);
-				pointer = 0x209C + data + (player * 0x44);
-				if (Process::Read32(pointer, offset) && is_in_range(offset, 0x18000000, 0x14000000) || offset == g_racePointer || Process::Read32(offset + 0x24, offset) && is_in_range(offset, 0xD0000000, 0x30000000))
-				{
+					held = true;
 					player++;
-					return;
 				}
-				if (player > 0 && player < 9 && Process::Read32(pointer, offset) && is_in_range(offset, 0x14000000, 0x18000000) && GetRacePointer())
+				if (Controller::IsKeyDown(DPadLeft))
 				{
-					Process::ReadFloat(offset + 0x28, dataY);
-					dataY += 40;
-					Process::ReadFloat(offset + 0x2C, dataZ);
-					if (dataY != 0 && dataY != 40 && dataZ != 0)
-					{
-						memcpy((void *)(g_racePointer), (void*)(offset), 0x28);
-						Process::WriteFloat(g_racePointer + 0x28, dataY);
-						Process::WriteFloat(g_racePointer + 0x2C, dataZ);
-					}
-					else
-						player++;
+					held = true;
+					player--;
 				}
 			}
+		}
+		if (active == 1 || tempActive == 1)
+		{
+			if (player > 8 || player < 1)
+			{
+				player = 1;
+				return;
+			}
+			Process::Read32(0x65DA44, data);
+			pointer = 0x209C + data + (player * 0x44);
+			if (offset == GetRacePointer())
+			{
+				player++;
+				return;
+			}
+			if (player > 0 && player < 9 && Process::Read32(pointer, offset) && is_in_range(offset, 0x14000000, 0x18000000))
+			{
+				Process::ReadFloat(offset + 0x28, dataY);
+				dataY += 40;
+				Process::ReadFloat(offset + 0x2C, dataZ);
+				if (dataY != 0 && dataY != 40 && dataZ != 0)
+				{
+					memcpy((void *)(GetRacePointer()), (void*)(offset), 0x28);
+					Process::WriteFloat(GetRacePointer() + 0x28, dataY);
+					Process::WriteFloat(GetRacePointer() + 0x2C, dataZ);
+				}
+				else
+					player++;
+			}
+		}
+	}*/
+
+	void	stalking(MenuEntry *entry)
+	{
+		static u32 player = 1, cpuPointer = 0;
+		static bool active = false;
+		if (!IsInRace())
+		{
+			player = 1;
+			active = false;
+			return;
+		}
+		if (Controller::IsKeysPressed(Y + DPadRight) && player < (GetTotalPlayers() ? GetTotalPlayers() + 1 : 9))
+			player++;
+		if (Controller::IsKeysPressed(Y + DPadLeft) && player > 1)
+			player--;
+		if (Controller::IsKeysPressed(Y + DPadUp))
+			active = true;
+		if (Controller::IsKeysPressed(Y + DPadDown))
+			active = false;
+		if (player > (GetTotalPlayers() ? GetTotalPlayers() : 8))
+			player = 1;
+		if (Controller::IsKeyDown(Y) || active)
+		{
+			Process::Read32(0x65DA44, cpuPointer);
+			Process::Read32(cpuPointer + 0x209C + (player * 0x44), cpuPointer);
+			if (cpuPointer != GetRacePointer() && is_in_range(player, 0, (GetTotalPlayers() ? GetTotalPlayers() + 1 : 9)) && cpuPointer && GetRacePointer() && is_in_range(*(u32*)(cpuPointer + 0x24), 0x37000000, 0xC9000000) && is_in_range(*(u32*)(cpuPointer + 0x2C), 0x37000000, 0xC9000000))
+			{
+				memcpy((void*)(GetRacePointer()), (void*)(cpuPointer), 0x30);
+				Process::WriteFloat(GetRacePointer() + 0x28, *(float*)(cpuPointer + 0x28) + 40);
+				return;
+			}
+			player++;
 		}
 	}
 
@@ -1283,6 +1314,8 @@ namespace CTRPluginFramework
 			keyboardDone = false;
 			return;
 		}
+		if (!IsInRace())
+			return;
 		OSD::Run([](const Screen &screen)
 		{
 			if (!screen.IsTop)
