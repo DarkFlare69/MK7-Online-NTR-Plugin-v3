@@ -10,7 +10,7 @@ namespace CTRPluginFramework
 	void InitMenu(PluginMenu &menu);
 	int main(void)
 	{
-		PluginMenu *menu = new PluginMenu("DarkFlare's Online MK7 Plugin", 3, 8, 2, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
+		PluginMenu *menu = new PluginMenu("DarkFlare's Online MK7 Plugin", 3, 8, 3, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
 		menu->SynchronizeWithFrame(true);
 		InitMenu(*menu);
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;
@@ -47,7 +47,6 @@ namespace CTRPluginFramework
 		itemcodes->Append(new MenuEntry("Item Wheel", itemWheel, "-X = Bullet\n-Y = Tanooki\n-Start = Blue Shell\n-Select = Lightning\n-D-Pad Left = Lucky 7\n-D-Pad Right = Red Shell\n-D-Pad Up = Green Shell\n-D-Pad Down = Bob-Omb"));
 		itemcodes->Append(new MenuEntry("Always Have Certain Item", nullptr, SetItem, "You will be able to choose the item you want when exiting the menu."));
 		itemcodes->Append(new MenuEntry("Cycle Completely Random Item", randomItems, "You will be constantly given a random item."));
-		//itemcodes->Append(new MenuEntry("Rapidfire", rapidfire, "Items will fire very quickly. Throw an item to toggle enable/disable."));
 		itemcodes->Append(new MenuEntry("Truly Random Items", trulyRandomItems, "Items will be completely random, regardless of your position. The bottom screen item icon will tell you the item you were supposed to recieve, while the top screen item icon will tell you the purely random item you recieved."));
 		itemcodes->Append(new MenuEntry("Drop Mushrooms", dropMushrooms, "This code replaces green shells with droppable mushrooms. Throw a 'green shell' to drop a mushroom."));
 		itemcodes->Append(new MenuEntry("Fast Blue Shell", fastBlueShell, "Blue shells will go very fast."));

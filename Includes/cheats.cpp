@@ -335,77 +335,6 @@ namespace CTRPluginFramework
 		}
 	}
 
-	/*void	stalking(MenuEntry *entry)
-	{
-		u32 tempActive = 0;
-		static unsigned int pointer = 0, active = 0, player = 1;
-		float dataY = 0, dataZ = 0;
-		static bool held = false;
-
-		if (!IsInRace())
-		{
-			player = 1;
-			active = 0;
-			pointer = 0;
-			return;
-		}
-		if (!Controller::IsKeyDown(Y))
-			held = false;
-		else
-		{
-			tempActive = 1;
-			if (Controller::IsKeyDown(DPadUp))
-				active = 1;
-			if (Controller::IsKeyDown(DPadDown))
-			{
-				active = 0;
-				player = 1;
-			}
-			if (!held)
-			{
-				if (Controller::IsKeyDown(DPadRight))
-				{
-					held = true;
-					player++;
-				}
-				if (Controller::IsKeyDown(DPadLeft))
-				{
-					held = true;
-					player--;
-				}
-			}
-		}
-		if (active == 1 || tempActive == 1)
-		{
-			if (player > 8 || player < 1)
-			{
-				player = 1;
-				return;
-			}
-			Process::Read32(0x65DA44, data);
-			pointer = 0x209C + data + (player * 0x44);
-			if (offset == GetRacePointer())
-			{
-				player++;
-				return;
-			}
-			if (player > 0 && player < 9 && Process::Read32(pointer, offset) && is_in_range(offset, 0x14000000, 0x18000000))
-			{
-				Process::ReadFloat(offset + 0x28, dataY);
-				dataY += 40;
-				Process::ReadFloat(offset + 0x2C, dataZ);
-				if (dataY != 0 && dataY != 40 && dataZ != 0)
-				{
-					memcpy((void *)(GetRacePointer()), (void*)(offset), 0x28);
-					Process::WriteFloat(GetRacePointer() + 0x28, dataY);
-					Process::WriteFloat(GetRacePointer() + 0x2C, dataZ);
-				}
-				else
-					player++;
-			}
-		}
-	}*/
-
 	void	stalking(MenuEntry *entry)
 	{
 		static u32 player = 1, cpuPointer = 0;
@@ -487,8 +416,6 @@ namespace CTRPluginFramework
 			}
 			temp[x] = sqrtf((coordinates[difference][x] * coordinates[difference][x]) + (coordinates[difference][z] * coordinates[difference][z])); // stores XZ hypotenuse
 			temp[y] = sqrtf((coordinates[difference][x] * coordinates[difference][x]) + (coordinates[difference][y] * coordinates[difference][y])); // stores XY hypotenuse
-			//Process::WriteFloat(g_racePointer + 0xC, coordinates[difference][x] / temp[y]);
-			//Process::WriteFloat(g_racePointer + 0x10, coordinates[difference][y] / temp[y]);
 			Process::WriteFloat(g_racePointer + 0x18, coordinates[difference][x] / temp[x]); // works fine
 			Process::WriteFloat(g_racePointer + 0x20, coordinates[difference][z] / temp[x]); // works fine
 		}
@@ -509,7 +436,7 @@ namespace CTRPluginFramework
 		}
 	}
 
-	void sizeChanger(MenuEntry *entry) // causes problems sometimes
+	void sizeChanger(MenuEntry *entry)
 	{
 		static float PlayerSize = 1.f, speed = 0.03f;
 		static bool adding = true, held = false;
@@ -578,28 +505,6 @@ namespace CTRPluginFramework
 			}
 		}
 	}
-
-	/*void rapidfire(MenuEntry *entry) // I honestly have no clue why this isn't working. InjectKey must not work on mk7 i guess? i tried writing this rapidfire code in so many different ways.
-	{
-		static bool enabled = false;
-		static int counter = 0;
-		if (Controller::IsKeyPressed(X) || Controller::IsKeyPressed(L))
-		{
-			enabled = !enabled;
-		}
-		if (enabled)
-		{
-			if (!(counter % 12 == counter))
-			{
-				Controller::InjectKey(L);
-				counter = 0;
-			}
-			else
-				counter++;
-		}
-		else
-			counter = 0;
-	}*/
 
 	void	fastBlueShell(MenuEntry *entry)
 	{
@@ -714,8 +619,6 @@ namespace CTRPluginFramework
 
 	void    trulyRandomItems(MenuEntry *entry)
 	{
-		// 16EF7052 is 16 bit
-		// Process::Read32(0x14000074, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read32(tmp2 - 0x1B5C, tmp2) && is_in_range(tmp2, 0x14000000, 0x18000000) && Process::Read16(tmp2 + 0x882, tmp3) && tmp3 == 1
 		u32 randNumber = Utils::Random(0, 0x14), g_itemPointer = GetItemPointer(), tmp = 0, tmp2 = 0;
 		u16 tmp3 = 0;
 		bool in_race = IsInRace(), alreadyGivenItem = false;
@@ -1435,7 +1338,7 @@ namespace CTRPluginFramework
 			error = true;
 	}
 
-	void    SetCoordinates(MenuEntry *entry) // beta
+	void    SetCoordinates(MenuEntry *entry)
 	{
 		static u32 coordinates = 0;
 		Keyboard keyboard("Enter your globe coordinates (available on MK7 NTR Plugin GBAtemp Page):");
