@@ -13,6 +13,27 @@ namespace CTRPluginFramework
 
 	/////////////////////////////////////////////////////////    Start of custom functions    /////////////////////////////////////////////////////////
 
+	/*void	dumpFrames(MenuEntry *entry)
+	{
+		File file;
+		Directory dir("frames", true);
+		int frame;
+		for (int x = 0; x < 400; x++)
+		{
+			for (int y = 0; y < 240; y++)
+			{
+				Color c;
+				ReadPixel(x, y, c, false);
+				*(unsigned int)(0x18000000 + (4 * x) + (4 * y)) = c.ToU32();
+			}
+		}
+		if (dir.OpenFile(file, "frame" + to_string(frame) + ".bmp", File::RWC) == 0)
+		{
+			file.Dump(0x18000000, 384000);
+			frame++;
+		}
+	}*/
+	
 	bool is_in_range(u32 value, u32 lowerbound, u32 upperbound)
 	{
 		return value > lowerbound && value < upperbound;
