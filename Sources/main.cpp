@@ -10,7 +10,7 @@ namespace CTRPluginFramework
 	void InitMenu(PluginMenu &menu);
 	int main(void)
 	{
-		PluginMenu *menu = new PluginMenu("DarkFlare's Online MK7 Plugin", 3, 8, 3, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
+		PluginMenu *menu = new PluginMenu("DarkFlare's Online MK7 Plugin", 3, 8, 4, "This is a plugin developed by DarkFlare that contains many popular MK7 hacks. Please be sure to read all of the notes for instructions on how to use a certain code. If there is a problem, report it on the official GBAtemp thread.");
 		menu->SynchronizeWithFrame(true);
 		InitMenu(*menu);
 		MenuFolder *kartcodes = nullptr, *speedcodes = nullptr, *itemcodes = nullptr, *coursecodes = nullptr, *menucodes = nullptr, *gamemodes = nullptr, *regioncodes = nullptr;

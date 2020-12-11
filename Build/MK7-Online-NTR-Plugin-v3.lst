@@ -176,342 +176,342 @@
 07004160 00000060 T CTRPluginFramework::SetCoordinates(CTRPluginFramework::MenuEntry*)
 070041c0 00000070 T CTRPluginFramework::writeFlag(unsigned short)
 07004230 000000f4 T CTRPluginFramework::SetFlag(CTRPluginFramework::MenuEntry*)
-07004324 000016c4 T CTRPluginFramework::main()
-070059e8 000000e0 W unsigned long CTRPluginFramework::Utils::Search<unsigned long>(unsigned long, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&)
-07005ac8 000001f4 t CTRPluginFramework::ToggleTouchscreenForceOn()
-07005cbc 00000004 T CTRPluginFramework::PatchProcess(CTRPluginFramework::FwkSettings&)
-07005cc0 00000004 T CTRPluginFramework::OnProcessExit()
-07005cc4 00000064 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_check_len(unsigned int, char const*) const
-07005d28 000000b4 W void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::emplace_back<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
-07005ddc 000001a8 T CTRPluginFramework::SetItem(CTRPluginFramework::MenuEntry*)
-07005f84 00000228 T CTRPluginFramework::spedometer(CTRPluginFramework::MenuEntry*)
-070061ac 00000518 T CTRPluginFramework::miiDumper(CTRPluginFramework::MenuEntry*)
-070066c4 00000018 T CTRPluginFramework::Color::Color(unsigned char, unsigned char, unsigned char, unsigned char)
-070066c4 00000018 T CTRPluginFramework::Color::Color(unsigned char, unsigned char, unsigned char, unsigned char)
-070066dc 0000000c T CTRPluginFramework::Color::Color(unsigned long)
-070066dc 0000000c T CTRPluginFramework::Color::Color(unsigned long)
-070066e8 00000008 T CTRPluginFramework::Color::ToU32() const
-070066f0 00000110 T CTRPluginFramework::Color::Fade(float)
-07006800 00000040 T CTRPluginFramework::Color::operator<=(CTRPluginFramework::Color const&) const
-07006840 0000007c T CTRPluginFramework::Color::operator*(CTRPluginFramework::Color const&) const
-070068bc 00000214 T CTRPluginFramework::Color::Blend(CTRPluginFramework::Color const&, CTRPluginFramework::Color::BlendMode) const
-07006ad0 00000120 t _GLOBAL__sub_I__ZN18CTRPluginFramework5Color5BlackE
-07006bf0 00000048 T CTRPluginFramework::Screen::Draw(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&) const
-07006c38 000000e4 W void std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> >::_M_realloc_insert<bool (* const&)(CTRPluginFramework::Screen const&)>(__gnu_cxx::__normal_iterator<bool (**)(CTRPluginFramework::Screen const&), std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> > >, bool (* const&)(CTRPluginFramework::Screen const&))
-07006d1c 00000078 T CTRPluginFramework::OSD::Run(bool (*)(CTRPluginFramework::Screen const&))
-07006d94 000000e4 W void std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> >::_M_realloc_insert<CTRPluginFramework::OSDImpl::OSDMessage*>(__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > >, CTRPluginFramework::OSDImpl::OSDMessage*&&)
-07006e78 00000094 T CTRPluginFramework::OSD::Notify(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
-07006f0c 000000c4 T CTRPluginFramework::ConvertToFloat(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
-07006fd0 000000a8 T CTRPluginFramework::stou32(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&)
-07007078 00000094 T CTRPluginFramework::ConvertToU8(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
-0700710c 00000094 T CTRPluginFramework::ConvertToU16(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
-070071a0 00000094 T CTRPluginFramework::ConvertToU32(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
-07007234 00000048 T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07007234 00000048 T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700727c 0000006c T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
-0700727c 0000006c T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
-070072e8 0000002c T CTRPluginFramework::Keyboard::~Keyboard()
-070072e8 0000002c T CTRPluginFramework::Keyboard::~Keyboard()
-07007314 00000008 T CTRPluginFramework::Keyboard::IsHexadecimal(bool)
-0700731c 0000001c T CTRPluginFramework::Keyboard::Populate(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, bool)
-07007338 00000028 T CTRPluginFramework::Keyboard::Open() const
-07007360 000000c4 T CTRPluginFramework::Keyboard::Open(unsigned char&) const
-07007424 0000010c T CTRPluginFramework::Keyboard::Open(unsigned char&, unsigned char) const
-07007530 000000c4 T CTRPluginFramework::Keyboard::Open(unsigned short&) const
-070075f4 0000010c T CTRPluginFramework::Keyboard::Open(unsigned short&, unsigned short) const
-07007700 000000c4 T CTRPluginFramework::Keyboard::Open(unsigned long&) const
-070077c4 0000010c T CTRPluginFramework::Keyboard::Open(unsigned long&, unsigned long) const
-070078d0 00000094 T CTRPluginFramework::Keyboard::Open(float&) const
-07007964 000000cc T CTRPluginFramework::Keyboard::Open(float&, float) const
-07007a30 00000070 T CTRPluginFramework::Keyboard::Open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) const
-07007aa0 00000084 T CTRPluginFramework::Keyboard::Open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
-07007b24 00000008 T CTRPluginFramework::Keyboard::GetInput[abi:cxx11]() const
-07007b2c 00000008 T CTRPluginFramework::Keyboard::GetMessage[abi:cxx11]() const
-07007b34 00000008 T CTRPluginFramework::Keyboard::OnInputChange(void (*)(CTRPluginFramework::Keyboard&, CTRPluginFramework::InputChangeEvent&)) const
-07007b3c 0000004c T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07007b3c 0000004c T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07007b88 00000054 T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07007b88 00000054 T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07007bdc 00000030 T CTRPluginFramework::MenuEntry::~MenuEntry()
-07007bdc 00000030 T CTRPluginFramework::MenuEntry::~MenuEntry()
-07007c0c 00000010 T CTRPluginFramework::MenuEntry::Disable() const
-07007c1c 00000008 T CTRPluginFramework::MenuEntry::WasJustActivated() const
-07007c24 00000008 T CTRPluginFramework::MenuEntry::IsActivated() const
-07007c2c 00000008 T CTRPluginFramework::MenuEntry::RefreshNote() const
-07007c34 00000028 t __tcf_0
-07007c5c 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
-07007cd4 00000008 T CTRPluginFramework::Hotkey::operator=(unsigned long)
-07007cdc 00000080 T CTRPluginFramework::Hotkey::AskForKeys()
-07007d5c 0000007c T CTRPluginFramework::KeysToString[abi:cxx11](unsigned long)
-07007dd8 000000d8 T CTRPluginFramework::Hotkey::ToString[abi:cxx11](bool) const
-07007eb0 0000001c T CTRPluginFramework::HotkeyManager::HotkeyManager(CTRPluginFramework::MenuEntry*)
-07007eb0 0000001c T CTRPluginFramework::HotkeyManager::HotkeyManager(CTRPluginFramework::MenuEntry*)
-07007ecc 00000040 T CTRPluginFramework::HotkeyManager::~HotkeyManager()
-07007ecc 00000040 T CTRPluginFramework::HotkeyManager::~HotkeyManager()
-07007f0c 00000010 T CTRPluginFramework::HotkeyManager::operator[](unsigned long)
-07007f1c 000000c0 T CTRPluginFramework::HotkeyManager::ToString[abi:cxx11]()
-07007fdc 00000020 T CTRPluginFramework::HotkeyManager::Count()
-07007ffc 00000178 W void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008174 00000134 T CTRPluginFramework::HotkeyManager::AskForKeys()
-070082a8 00000124 t _GLOBAL__sub_I__ZN18CTRPluginFramework6HotkeyC2Ev
-070083cc 00000044 T CTRPluginFramework::MenuFolder::MenuFolder(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-070083cc 00000044 T CTRPluginFramework::MenuFolder::MenuFolder(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008410 00000028 T CTRPluginFramework::MenuFolder::~MenuFolder()
-07008410 00000028 T CTRPluginFramework::MenuFolder::~MenuFolder()
-07008438 00000010 T CTRPluginFramework::MenuFolder::Append(CTRPluginFramework::MenuEntry*) const
-07008448 00000030 W CTRPluginFramework::TextBox::~TextBox()
-07008448 00000030 W CTRPluginFramework::TextBox::~TextBox()
-07008478 0000001c W CTRPluginFramework::TextBox::~TextBox()
-07008494 0000004c T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-07008494 0000004c T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-070084e0 00000044 T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-070084e0 00000044 T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-07008524 0000003c T CTRPluginFramework::MessageBox::~MessageBox()
-07008524 0000003c T CTRPluginFramework::MessageBox::~MessageBox()
-07008560 00000008 T CTRPluginFramework::MessageBox::operator()() const
-07008568 00000074 T CTRPluginFramework::PluginMenu::PluginMenu(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long)
-07008568 00000074 T CTRPluginFramework::PluginMenu::PluginMenu(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long)
-070085dc 0000002c T CTRPluginFramework::PluginMenu::~PluginMenu()
-070085dc 0000002c T CTRPluginFramework::PluginMenu::~PluginMenu()
-07008608 00000014 T CTRPluginFramework::PluginMenu::Append(CTRPluginFramework::MenuFolder*) const
-0700861c 00000044 T CTRPluginFramework::PluginMenu::Run() const
-07008660 00000008 T CTRPluginFramework::PluginMenu::IsOpen()
-07008668 00000010 T CTRPluginFramework::PluginMenu::GetRunningInstance()
-07008678 0000000c T CTRPluginFramework::PluginMenu::SynchronizeWithFrame(bool)
-07008684 00000014 T CTRPluginFramework::Controller::GetKeysDown()
-07008698 0000001c T CTRPluginFramework::Controller::IsKeyDown(CTRPluginFramework::Key)
-070086b4 0000001c T CTRPluginFramework::Controller::IsKeyPressed(CTRPluginFramework::Key)
-070086d0 0000001c T CTRPluginFramework::Controller::IsKeyReleased(CTRPluginFramework::Key)
-070086ec 0000001c T CTRPluginFramework::Controller::IsKeysDown(unsigned long)
-07008708 00000034 T CTRPluginFramework::Controller::IsKeysPressed(unsigned long)
-0700873c 0000002c T CTRPluginFramework::Controller::Update()
-07008768 00000078 t CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}::operator()(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&) const [clone .isra.0]
-070087e0 00000044 W CTRPluginFramework::FSPath::operator FS_Path()
-07008824 0000004c T CTRPluginFramework::Directory::Close() const
-07008870 000000e8 T CTRPluginFramework::Directory::OpenFile(CTRPluginFramework::File&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) const
-07008958 00000014 T CTRPluginFramework::Directory::GetFullName[abi:cxx11]() const
-0700896c 00000008 T CTRPluginFramework::Directory::IsOpen() const
-07008974 00000040 T CTRPluginFramework::Directory::Directory()
-07008974 00000040 T CTRPluginFramework::Directory::Directory()
-070089b4 00000034 W std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> >::clear()
-070089e8 00000060 T CTRPluginFramework::Directory::~Directory()
-070089e8 00000060 T CTRPluginFramework::Directory::~Directory()
-07008a48 00000020 W std::_Vector_base<unsigned short, std::allocator<unsigned short> >::~_Vector_base()
-07008a48 00000020 W std::_Vector_base<unsigned short, std::allocator<unsigned short> >::~_Vector_base()
-07008a68 00000098 T CTRPluginFramework::Directory::ChangeWorkingDirectory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008b00 000000a0 T CTRPluginFramework::Directory::Create(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008ba0 000000a0 T CTRPluginFramework::Directory::Remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008c40 000000d4 T CTRPluginFramework::Directory::Rename(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008d14 00000094 T CTRPluginFramework::Directory::IsExists(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008da8 0000014c T CTRPluginFramework::Directory::Open(CTRPluginFramework::Directory&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
-07008ef4 0000005c T CTRPluginFramework::Directory::Directory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
-07008ef4 0000005c T CTRPluginFramework::Directory::Directory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
-07008f50 0000003c W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07008f8c 0000001c W CTRPluginFramework::Directory::DirectoryEntry::DirectoryEntry(CTRPluginFramework::Directory::DirectoryEntry&&)
-07008f8c 0000001c W CTRPluginFramework::Directory::DirectoryEntry::DirectoryEntry(CTRPluginFramework::Directory::DirectoryEntry&&)
-07008fa8 00000178 W void std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> >::_M_realloc_insert<CTRPluginFramework::Directory::DirectoryEntry>(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, CTRPluginFramework::Directory::DirectoryEntry&&)
-07009120 0000001c W CTRPluginFramework::Directory::DirectoryEntry::operator=(CTRPluginFramework::Directory::DirectoryEntry&&)
-0700913c 0000012c t void std::__adjust_heap<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, int, CTRPluginFramework::Directory::DirectoryEntry, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, int, __gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, CTRPluginFramework::Directory::DirectoryEntry, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>) [clone .isra.0]
-07009268 0000007c t void std::__pop_heap<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>&) [clone .isra.0]
-070092e4 00000068 t void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Val_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Val_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>) [clone .isra.0]
-0700934c 000000ac t void std::__insertion_sort<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>) [clone .isra.0]
-070093f8 00000084 W void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
-0700947c 00000044 W std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<CTRPluginFramework::Directory::DirectoryEntry> >, std::is_move_constructible<CTRPluginFramework::Directory::DirectoryEntry>, std::is_move_assignable<CTRPluginFramework::Directory::DirectoryEntry> >::value, void>::type std::swap<CTRPluginFramework::Directory::DirectoryEntry>(CTRPluginFramework::Directory::DirectoryEntry&, CTRPluginFramework::Directory::DirectoryEntry&)
-070094c0 000001d8 t void std::__introsort_loop<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, int, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, int, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>)
-07009698 000001c8 T CTRPluginFramework::Directory::_List() const
-07009860 000000dc T CTRPluginFramework::Directory::ListFiles(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
-0700993c 000000e0 T CTRPluginFramework::Directory::ListDirectories(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
-07009a1c 00000074 T CTRPluginFramework::File::Close() const
-07009a90 000000b8 T CTRPluginFramework::File::Read(void*, unsigned long) const
-07009b48 000000f0 T CTRPluginFramework::File::Write(void const*, unsigned long)
-07009c38 0000002c T CTRPluginFramework::File::WriteLine(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-07009c64 000000e4 T CTRPluginFramework::File::Seek(long long, CTRPluginFramework::File::SeekPos) const
-07009d48 00000008 T CTRPluginFramework::File::Tell() const
-07009d50 00000030 T CTRPluginFramework::File::Rewind() const
-07009d80 00000034 T CTRPluginFramework::File::Flush() const
-07009db4 0000006c T CTRPluginFramework::File::GetSize() const
-07009e20 000000dc T CTRPluginFramework::File::Dump(unsigned long, unsigned long)
-07009efc 00000008 T CTRPluginFramework::File::IsOpen() const
-07009f04 00000014 T CTRPluginFramework::File::GetFullName[abi:cxx11]() const
-07009f18 00000044 T CTRPluginFramework::File::File()
-07009f18 00000044 T CTRPluginFramework::File::File()
-07009f5c 00000094 T CTRPluginFramework::File::Create(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-07009ff0 000000d4 T CTRPluginFramework::File::Rename(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700a0c4 00000084 T CTRPluginFramework::File::Remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700a148 000000a0 T CTRPluginFramework::File::Exists(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700a1e8 00000114 T CTRPluginFramework::File::Open(CTRPluginFramework::File&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)
-0700a2fc 00000060 T CTRPluginFramework::File::File(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long)
-0700a2fc 00000060 T CTRPluginFramework::File::File(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long)
-0700a35c 00000024 T CTRPluginFramework::Lock::Lock(CTRPluginFramework::Mutex&)
-0700a35c 00000024 T CTRPluginFramework::Lock::Lock(CTRPluginFramework::Mutex&)
-0700a380 0000004c T CTRPluginFramework::Lock::~Lock()
-0700a380 0000004c T CTRPluginFramework::Lock::~Lock()
-0700a3cc 00000014 T CTRPluginFramework::Mutex::Mutex()
-0700a3cc 00000014 T CTRPluginFramework::Mutex::Mutex()
-0700a3e0 00000028 T CTRPluginFramework::Mutex::~Mutex()
-0700a3e0 00000028 T CTRPluginFramework::Mutex::~Mutex()
-0700a408 00000004 T CTRPluginFramework::Mutex::Lock()
-0700a40c 00000004 T CTRPluginFramework::Mutex::Unlock()
-0700a410 00000010 T CTRPluginFramework::Process::GetHandle()
-0700a420 00000010 T CTRPluginFramework::Process::GetTitleID()
-0700a430 00000060 T CTRPluginFramework::Process::GetTitleID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
-0700a490 00000038 T CTRPluginFramework::Process::GetName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
-0700a4c8 00000024 T CTRPluginFramework::Process::GetTextSize()
-0700a4ec 00000008 T CTRPluginFramework::Process::Pause()
-0700a4f4 00000010 T CTRPluginFramework::Process::Play(unsigned long)
-0700a504 000000a8 T CTRPluginFramework::Process::CopyMemory(void*, void const*, unsigned long)
-0700a5ac 00000004 T CTRPluginFramework::Process::CheckAddress(unsigned long, unsigned long)
-0700a5b0 0000004c T CTRPluginFramework::Process::CheckRegion(unsigned long, unsigned long&, unsigned long)
-0700a5fc 0000001c T CTRPluginFramework::Process::Write32(unsigned long, unsigned long)
-0700a618 0000001c T CTRPluginFramework::Process::Write16(unsigned long, unsigned short)
-0700a634 0000001c T CTRPluginFramework::Process::Write8(unsigned long, unsigned char)
-0700a650 00000024 T CTRPluginFramework::Process::WriteFloat(unsigned long, float)
-0700a674 00000020 T CTRPluginFramework::Process::Read32(unsigned long, unsigned long&)
-0700a694 00000020 T CTRPluginFramework::Process::Read16(unsigned long, unsigned short&)
-0700a6b4 00000020 T CTRPluginFramework::Process::Read8(unsigned long, unsigned char&)
-0700a6d4 00000020 T CTRPluginFramework::Process::ReadFloat(unsigned long, float&)
-0700a6f4 0000016c T CTRPluginFramework::Process::ReadString(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long, CTRPluginFramework::StringFormat)
-0700a860 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
-0700a8d8 0000005c t CTRPluginFramework::GetName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
-0700a934 0000005c W CTRPluginFramework::Color::operator std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >() const
-0700a990 0000005c T CTRPluginFramework::Utils::Format[abi:cxx11](char const*, ...)
-0700a9ec 00000044 T CTRPluginFramework::Utils::ToHex[abi:cxx11](unsigned long)
-0700aa30 00000080 T CTRPluginFramework::Utils::ToString[abi:cxx11](float, int)
-0700aab0 000000b8 T CTRPluginFramework::Utils::GetSize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700ab68 00000144 T CTRPluginFramework::Utils::RemoveLastChar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
-0700acac 00000038 W std::mersenne_twister_engine<unsigned int, 32u, 624u, 397u, 31u, 2567483615u, 11u, 4294967295u, 7u, 2636928640u, 15u, 4022730752u, 18u, 1812433253u>::seed(unsigned int)
-0700ace4 0000001c T CTRPluginFramework::InitializeRandomEngine()
-0700ad00 00000258 t CTRPluginFramework::ListFolders(CTRPluginFramework::MenuFolderImpl&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
-0700af58 00000044 W std::_Deque_base<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> >::~_Deque_base()
-0700af58 00000044 W std::_Deque_base<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> >::~_Deque_base()
-0700af9c 00000740 t CTRPluginFramework::SDExplorerInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
-0700b6dc 00000008 T CTRPluginFramework::Utils::FilePicker(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700b6e4 00000044 T CTRPluginFramework::Utils::DirectoryPicker(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
-0700b728 00000100 W void std::vector<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> >::_M_realloc_insert<CTRPluginFramework::Event const&>(__gnu_cxx::__normal_iterator<CTRPluginFramework::Event*, std::vector<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> > >, CTRPluginFramework::Event const&)
-0700b828 0000010c W std::mersenne_twister_engine<unsigned int, 32u, 624u, 397u, 31u, 2567483615u, 11u, 4294967295u, 7u, 2636928640u, 15u, 4022730752u, 18u, 1812433253u>::operator()()
-0700b934 00000068 T CTRPluginFramework::Utils::Random(unsigned long, unsigned long)
-0700b99c 0000001c t _GLOBAL__sub_I__ZN18CTRPluginFramework5Utils6FormatB5cxx11EPKcz
-0700b9b8 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
-0700ba30 0000002c T CTRPluginFramework::GetRatio(int, int, int, int)
-0700ba5c 00000108 T CTRPluginFramework::PostProcess(CTRPluginFramework::BMPImage*, int, int)
-0700bb64 000001cc t CTRPluginFramework::Preferences::LoadBackgrounds()::{lambda(void*)#1}::_FUN(void*)
-0700bd30 00000200 T CTRPluginFramework::Preferences::OpenConfigFile(CTRPluginFramework::File&, CTRPluginFramework::Preferences::HeaderV11&)
-0700bf30 00000094 T CTRPluginFramework::Preferences::LoadSettings()
-0700bfc4 000000bc T CTRPluginFramework::Preferences::LoadSavedEnabledCheats()
-0700c080 000000bc T CTRPluginFramework::Preferences::LoadSavedFavorites()
-0700c13c 0000005c T CTRPluginFramework::Preferences::LoadHotkeysFromFile()
-0700c198 0000009c T CTRPluginFramework::Preferences::LoadBackgrounds()
-0700c234 00000170 T CTRPluginFramework::Preferences::WriteSettings()
-0700c3a4 00000060 T CTRPluginFramework::Preferences::ApplyBacklight()
-0700c404 00000004 T CTRPluginFramework::Preferences::Initialize()
-0700c408 00000108 t _GLOBAL__sub_I__ZN18CTRPluginFramework11Preferences18topBackgroundImageE
-0700c510 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
-0700c588 00000024 T CTRPluginFramework::BMPImage::BitmapFileHeader::Read(CTRPluginFramework::File&)
-0700c5ac 00000024 T CTRPluginFramework::BMPImage::BitmapInformationHeader::Read(CTRPluginFramework::File&)
-0700c5d0 00000038 T CTRPluginFramework::BMPImage::~BMPImage()
-0700c5d0 00000038 T CTRPluginFramework::BMPImage::~BMPImage()
-0700c608 00000008 T CTRPluginFramework::BMPImage::IsLoaded() const
-0700c610 00000008 T CTRPluginFramework::BMPImage::Width() const
-0700c618 00000008 T CTRPluginFramework::BMPImage::Height() const
-0700c620 00000008 T CTRPluginFramework::BMPImage::GetDimensions() const
-0700c628 00000010 T CTRPluginFramework::BMPImage::data() const
-0700c638 0000001c T CTRPluginFramework::BMPImage::end() const
-0700c654 00000028 W CTRPluginFramework::BMPImage::DataClear()
-0700c67c 0000008c T CTRPluginFramework::BMPImage::BMPImage(unsigned long, unsigned long)
-0700c67c 0000008c T CTRPluginFramework::BMPImage::BMPImage(unsigned long, unsigned long)
-0700c708 00000034 T CTRPluginFramework::BMPImage::Unload()
-0700c73c 000001dc T CTRPluginFramework::BMPImage::SaveImage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
-0700c918 00000048 T CTRPluginFramework::BMPImage::ReverseChannels()
-0700c960 00000030 T CTRPluginFramework::BMPImage::RGBtoBGR()
-0700c990 00000124 T CTRPluginFramework::BMPImage::OptimiseForRendering()
-0700cab4 000000c8 T CTRPluginFramework::BMPImage::Draw(int, int)
-0700cb7c 00000008 T CTRPluginFramework::BMPImage::Draw(CTRPluginFramework::Vector<int> const&)
-0700cb84 000000f0 T CTRPluginFramework::BMPImage::Draw(CTRPluginFramework::Rect<int> const&, float)
-0700cc74 000000d4 T CTRPluginFramework::BMPImage::FillWithImg(CTRPluginFramework::BMPImage const&)
-0700cd48 00000070 T CTRPluginFramework::BMPImage::_CreateBitmap()
-0700cdb8 00000024 T CTRPluginFramework::BMPImage::SetWidthHeight(unsigned long, unsigned long)
-0700cddc 00000120 T CTRPluginFramework::BMPImage::Resample(CTRPluginFramework::BMPImage&, int, int)
-0700cefc 00000058 T CTRPluginFramework::BMPImage::BMPImage(CTRPluginFramework::BMPImage const&, unsigned long, unsigned long)
-0700cefc 00000058 T CTRPluginFramework::BMPImage::BMPImage(CTRPluginFramework::BMPImage const&, unsigned long, unsigned long)
-0700cf54 0000002c W unsigned char* std::copy<unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*)
-0700cf80 00000324 T CTRPluginFramework::BMPImage::_LoadBitmap()
-0700d2a4 0000004c T CTRPluginFramework::BMPImage::BMPImage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700d2a4 0000004c T CTRPluginFramework::BMPImage::BMPImage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-0700d2f0 00000178 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-0700d2f0 00000178 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-0700d468 00000158 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-0700d468 00000158 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
-0700d5c0 00000074 T CTRPluginFramework::MessageBoxImpl::_ProcessEvent(CTRPluginFramework::Event&)
-0700d634 000002b4 T CTRPluginFramework::MessageBoxImpl::_Draw()
-0700d8e8 000001ac T CTRPluginFramework::MessageBoxImpl::operator()()
-0700da94 00000020 t __tcf_0
-0700dab4 00000094 T CTRPluginFramework::OSDImpl::DrawNotif_TaskFunc(void*)
-0700db48 00000064 W CTRPluginFramework::Task::~Task()
-0700db48 00000064 W CTRPluginFramework::Task::~Task()
-0700dbac 00000020 W std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> >::~vector()
-0700dbac 00000020 W std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> >::~vector()
-0700dbcc 00000020 W std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> >::~vector()
-0700dbcc 00000020 W std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> >::~vector()
-0700dbec 0000005c t CTRPluginFramework::OSDImpl::Update()::{lambda(CTRPluginFramework::OSDImpl::OSDMessage*)#1}::operator()(CTRPluginFramework::OSDImpl::OSDMessage*) const [clone .isra.0]
-0700dc48 00000030 t CTRPluginFramework::SearchStmfd(unsigned long, unsigned long, unsigned long) [clone .constprop.0]
-0700dc78 000000b0 t CTRPluginFramework::memsearch(unsigned char*, void const*, unsigned long, unsigned long) [clone .constprop.0]
-0700dd28 00000088 T CTRPluginFramework::OSDImpl::OSDMessage::OSDMessage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
-0700dd28 00000088 T CTRPluginFramework::OSDImpl::OSDMessage::OSDMessage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
-0700ddb0 0000000c T CTRPluginFramework::OSDImpl::Lock()
-0700ddbc 0000001c T CTRPluginFramework::OSDImpl::TryLock()
-0700ddd8 0000000c T CTRPluginFramework::OSDImpl::Unlock()
-0700dde4 000000d8 T CTRPluginFramework::OSDImpl::UpdateScreens()
-0700debc 0000015c T CTRPluginFramework::OSDImpl::WaitFramePaused()
-0700e018 00000064 T CTRPluginFramework::OSDImpl::ResumeFrame(unsigned long)
-0700e07c 000000d0 T CTRPluginFramework::InstallOSD()
-0700e14c 00000048 T CTRPluginFramework::OSDImpl::_Initialize()
-0700e194 00000008 W __gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > > std::next<__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > > >(__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > >, std::iterator_traits<__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > > >::difference_type)
-0700e19c 00000190 t _GLOBAL__sub_I__ZN18CTRPluginFramework7OSDImpl12DrawSaveIconE
-0700e32c 000001b4 T CTRPluginFramework::OSDImpl::Update()
-0700e4e0 000000c8 T CTRPluginFramework::OSDImpl::OnTopScreenFrame()
-0700e5a8 000000e0 T CTRPluginFramework::OSDImpl::OnBottomScreenFrame()
-0700e688 000003d8 T CTRPluginFramework::OSDImpl::CallbackCommon(unsigned long, void*, void*, int, int)
-0700ea60 0000008c T CTRPluginFramework::OSDImpl::MainCallback(unsigned long, int, void*, void*, int, int, int)
-0700eaec 00000090 T CTRPluginFramework::OSDImpl::MainCallback2(unsigned long, unsigned long*, unsigned long, unsigned long)
-0700eb7c 00000024 T CTRPluginFramework::PrivColor::_ReadRGBA8(unsigned char*)
-0700eba0 0000001c T CTRPluginFramework::PrivColor::_ReadBGR8(unsigned char*)
-0700ebbc 0000002c T CTRPluginFramework::PrivColor::_ReadRGB565(unsigned char*)
-0700ebe8 00000030 T CTRPluginFramework::PrivColor::_ReadRGB5A1(unsigned char*)
-0700ec18 00000028 T CTRPluginFramework::PrivColor::_ReadRGBA4(unsigned char*)
-0700ec40 00000028 T CTRPluginFramework::PrivColor::_WriteRGBA8(unsigned char*, CTRPluginFramework::Color const&)
-0700ec68 00000020 T CTRPluginFramework::PrivColor::_WriteBGR8(unsigned char*, CTRPluginFramework::Color const&)
-0700ec88 00000030 T CTRPluginFramework::PrivColor::_WriteRGB565(unsigned char*, CTRPluginFramework::Color const&)
-0700ecb8 00000048 T CTRPluginFramework::PrivColor::_WriteRGB5A1(unsigned char*, CTRPluginFramework::Color const&)
-0700ed00 00000044 T CTRPluginFramework::PrivColor::_WriteRGBA4(unsigned char*, CTRPluginFramework::Color const&)
-0700ed44 00000138 T CTRPluginFramework::PrivColor::SetFormat(GSPGPU_FramebufferFormats)
-0700ee7c 0000002c T CTRPluginFramework::PrivColor::UseClamp(bool)
-0700eea8 00000064 W CTRPluginFramework::Rect<int>::Contains(int, int) const
-0700ef0c 0000003c t __tls_init
-0700ef0c 0000003c T TLS init function for CTRPluginFramework::PrivColor::_clampArea
-0700ef48 00000040 T CTRPluginFramework::PrivColor::UseClamp(bool, CTRPluginFramework::Rect<int> const&)
-0700ef88 00000098 T CTRPluginFramework::PrivColor::_WriteRGBA8Clamp(unsigned char*, CTRPluginFramework::Color const&)
-0700f020 00000090 T CTRPluginFramework::PrivColor::_WriteBGR8Clamp(unsigned char*, CTRPluginFramework::Color const&)
-0700f0b0 000000ac T CTRPluginFramework::PrivColor::_WriteRGB565Clamp(unsigned char*, CTRPluginFramework::Color const&)
-0700f15c 000000b8 T CTRPluginFramework::PrivColor::_WriteRGB5A1Clamp(unsigned char*, CTRPluginFramework::Color const&)
-0700f214 000000b4 T CTRPluginFramework::PrivColor::_WriteRGBA4Clamp(unsigned char*, CTRPluginFramework::Color const&)
-0700f2c8 0000004c T CTRPluginFramework::Renderer::SetTarget(CTRPluginFramework::Target)
-0700f314 00000300 T CTRPluginFramework::Renderer::MenuSelector(int, int, int, int)
-0700f614 000000c0 T CTRPluginFramework::ProcessingLogo::Draw(int, int)
-0700f6d4 0000012c T CTRPluginFramework::Renderer::EndFrame(bool)
-0700f800 0000016c t CTRPluginFramework::DrawLineV(unsigned long, CTRPluginFramework::Color const&, unsigned char*, unsigned long)
-0700f96c 00000020 W std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::~vector()
-0700f96c 00000020 W std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::~vector()
-0700f98c 000001a4 T CTRPluginFramework::Renderer::DrawLine(int, int, int, CTRPluginFramework::Color const&, int)
-0700fb30 00000118 T CTRPluginFramework::Renderer::DrawStippledLine(int, int, int, CTRPluginFramework::Color const&, int)
-0700fc48 00000090 T CTRPluginFramework::Renderer::DrawRect(int, int, int, int, CTRPluginFramework::Color const&, bool, int)
-0700fcd8 000000a8 T CTRPluginFramework::Renderer::DrawRect(CTRPluginFramework::Rect<int> const&, CTRPluginFramework::Color const&, bool)
-0700fd80 000002b0 T CTRPluginFramework::Renderer::DrawRect2(CTRPluginFramework::Rect<int> const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
-07010030 00000044 W std::_Deque_base<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::~_Deque_base()
-07010030 00000044 W std::_Deque_base<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::~_Deque_base()
-07010074 0000004c W std::deque<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::pop_front()
-070100c0 000001b8 W void std::deque<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::emplace_back<CTRPluginFramework::Vector<int> >(CTRPluginFramework::Vector<int>&&)
-07010278 000000fc W void std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::_M_realloc_insert<CTRPluginFramework::Line<int> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Line<int>*, std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > > >, CTRPluginFramework::Line<int>&&)
-07010374 00000040 W void std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::emplace_back<CTRPluginFramework::Line<int> >(CTRPluginFramework::Line<int>&&)
+07004324 000016c8 T CTRPluginFramework::main()
+070059ec 000000e0 W unsigned long CTRPluginFramework::Utils::Search<unsigned long>(unsigned long, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&)
+07005acc 000001f4 t CTRPluginFramework::ToggleTouchscreenForceOn()
+07005cc0 00000004 T CTRPluginFramework::PatchProcess(CTRPluginFramework::FwkSettings&)
+07005cc4 00000004 T CTRPluginFramework::OnProcessExit()
+07005cc8 00000064 W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_check_len(unsigned int, char const*) const
+07005d2c 000000b4 W void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::emplace_back<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+07005de0 000001a8 T CTRPluginFramework::SetItem(CTRPluginFramework::MenuEntry*)
+07005f88 00000228 T CTRPluginFramework::spedometer(CTRPluginFramework::MenuEntry*)
+070061b0 00000518 T CTRPluginFramework::miiDumper(CTRPluginFramework::MenuEntry*)
+070066c8 00000018 T CTRPluginFramework::Color::Color(unsigned char, unsigned char, unsigned char, unsigned char)
+070066c8 00000018 T CTRPluginFramework::Color::Color(unsigned char, unsigned char, unsigned char, unsigned char)
+070066e0 0000000c T CTRPluginFramework::Color::Color(unsigned long)
+070066e0 0000000c T CTRPluginFramework::Color::Color(unsigned long)
+070066ec 00000008 T CTRPluginFramework::Color::ToU32() const
+070066f4 00000110 T CTRPluginFramework::Color::Fade(float)
+07006804 00000040 T CTRPluginFramework::Color::operator<=(CTRPluginFramework::Color const&) const
+07006844 0000007c T CTRPluginFramework::Color::operator*(CTRPluginFramework::Color const&) const
+070068c0 00000214 T CTRPluginFramework::Color::Blend(CTRPluginFramework::Color const&, CTRPluginFramework::Color::BlendMode) const
+07006ad4 00000120 t _GLOBAL__sub_I__ZN18CTRPluginFramework5Color5BlackE
+07006bf4 00000048 T CTRPluginFramework::Screen::Draw(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned long, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&) const
+07006c3c 000000e4 W void std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> >::_M_realloc_insert<bool (* const&)(CTRPluginFramework::Screen const&)>(__gnu_cxx::__normal_iterator<bool (**)(CTRPluginFramework::Screen const&), std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> > >, bool (* const&)(CTRPluginFramework::Screen const&))
+07006d20 00000078 T CTRPluginFramework::OSD::Run(bool (*)(CTRPluginFramework::Screen const&))
+07006d98 000000e4 W void std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> >::_M_realloc_insert<CTRPluginFramework::OSDImpl::OSDMessage*>(__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > >, CTRPluginFramework::OSDImpl::OSDMessage*&&)
+07006e7c 00000094 T CTRPluginFramework::OSD::Notify(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
+07006f10 000000c4 T CTRPluginFramework::ConvertToFloat(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
+07006fd4 000000a8 T CTRPluginFramework::stou32(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&)
+0700707c 00000094 T CTRPluginFramework::ConvertToU8(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
+07007110 00000094 T CTRPluginFramework::ConvertToU16(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
+070071a4 00000094 T CTRPluginFramework::ConvertToU32(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, bool)
+07007238 00000048 T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07007238 00000048 T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07007280 0000006c T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+07007280 0000006c T CTRPluginFramework::Keyboard::Keyboard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+070072ec 0000002c T CTRPluginFramework::Keyboard::~Keyboard()
+070072ec 0000002c T CTRPluginFramework::Keyboard::~Keyboard()
+07007318 00000008 T CTRPluginFramework::Keyboard::IsHexadecimal(bool)
+07007320 0000001c T CTRPluginFramework::Keyboard::Populate(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, bool)
+0700733c 00000028 T CTRPluginFramework::Keyboard::Open() const
+07007364 000000c4 T CTRPluginFramework::Keyboard::Open(unsigned char&) const
+07007428 0000010c T CTRPluginFramework::Keyboard::Open(unsigned char&, unsigned char) const
+07007534 000000c4 T CTRPluginFramework::Keyboard::Open(unsigned short&) const
+070075f8 0000010c T CTRPluginFramework::Keyboard::Open(unsigned short&, unsigned short) const
+07007704 000000c4 T CTRPluginFramework::Keyboard::Open(unsigned long&) const
+070077c8 0000010c T CTRPluginFramework::Keyboard::Open(unsigned long&, unsigned long) const
+070078d4 00000094 T CTRPluginFramework::Keyboard::Open(float&) const
+07007968 000000cc T CTRPluginFramework::Keyboard::Open(float&, float) const
+07007a34 00000070 T CTRPluginFramework::Keyboard::Open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) const
+07007aa4 00000084 T CTRPluginFramework::Keyboard::Open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+07007b28 00000008 T CTRPluginFramework::Keyboard::GetInput[abi:cxx11]() const
+07007b30 00000008 T CTRPluginFramework::Keyboard::GetMessage[abi:cxx11]() const
+07007b38 00000008 T CTRPluginFramework::Keyboard::OnInputChange(void (*)(CTRPluginFramework::Keyboard&, CTRPluginFramework::InputChangeEvent&)) const
+07007b40 0000004c T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07007b40 0000004c T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07007b8c 00000054 T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07007b8c 00000054 T CTRPluginFramework::MenuEntry::MenuEntry(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void (*)(CTRPluginFramework::MenuEntry*), void (*)(CTRPluginFramework::MenuEntry*), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07007be0 00000030 T CTRPluginFramework::MenuEntry::~MenuEntry()
+07007be0 00000030 T CTRPluginFramework::MenuEntry::~MenuEntry()
+07007c10 00000010 T CTRPluginFramework::MenuEntry::Disable() const
+07007c20 00000008 T CTRPluginFramework::MenuEntry::WasJustActivated() const
+07007c28 00000008 T CTRPluginFramework::MenuEntry::IsActivated() const
+07007c30 00000008 T CTRPluginFramework::MenuEntry::RefreshNote() const
+07007c38 00000028 t __tcf_0
+07007c60 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
+07007cd8 00000008 T CTRPluginFramework::Hotkey::operator=(unsigned long)
+07007ce0 00000080 T CTRPluginFramework::Hotkey::AskForKeys()
+07007d60 0000007c T CTRPluginFramework::KeysToString[abi:cxx11](unsigned long)
+07007ddc 000000d8 T CTRPluginFramework::Hotkey::ToString[abi:cxx11](bool) const
+07007eb4 0000001c T CTRPluginFramework::HotkeyManager::HotkeyManager(CTRPluginFramework::MenuEntry*)
+07007eb4 0000001c T CTRPluginFramework::HotkeyManager::HotkeyManager(CTRPluginFramework::MenuEntry*)
+07007ed0 00000040 T CTRPluginFramework::HotkeyManager::~HotkeyManager()
+07007ed0 00000040 T CTRPluginFramework::HotkeyManager::~HotkeyManager()
+07007f10 00000010 T CTRPluginFramework::HotkeyManager::operator[](unsigned long)
+07007f20 000000c0 T CTRPluginFramework::HotkeyManager::ToString[abi:cxx11]()
+07007fe0 00000020 T CTRPluginFramework::HotkeyManager::Count()
+07008000 00000178 W void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008178 00000134 T CTRPluginFramework::HotkeyManager::AskForKeys()
+070082ac 00000124 t _GLOBAL__sub_I__ZN18CTRPluginFramework6HotkeyC2Ev
+070083d0 00000044 T CTRPluginFramework::MenuFolder::MenuFolder(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+070083d0 00000044 T CTRPluginFramework::MenuFolder::MenuFolder(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008414 00000028 T CTRPluginFramework::MenuFolder::~MenuFolder()
+07008414 00000028 T CTRPluginFramework::MenuFolder::~MenuFolder()
+0700843c 00000010 T CTRPluginFramework::MenuFolder::Append(CTRPluginFramework::MenuEntry*) const
+0700844c 00000030 W CTRPluginFramework::TextBox::~TextBox()
+0700844c 00000030 W CTRPluginFramework::TextBox::~TextBox()
+0700847c 0000001c W CTRPluginFramework::TextBox::~TextBox()
+07008498 0000004c T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+07008498 0000004c T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+070084e4 00000044 T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+070084e4 00000044 T CTRPluginFramework::MessageBox::MessageBox(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+07008528 0000003c T CTRPluginFramework::MessageBox::~MessageBox()
+07008528 0000003c T CTRPluginFramework::MessageBox::~MessageBox()
+07008564 00000008 T CTRPluginFramework::MessageBox::operator()() const
+0700856c 00000074 T CTRPluginFramework::PluginMenu::PluginMenu(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long)
+0700856c 00000074 T CTRPluginFramework::PluginMenu::PluginMenu(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long)
+070085e0 0000002c T CTRPluginFramework::PluginMenu::~PluginMenu()
+070085e0 0000002c T CTRPluginFramework::PluginMenu::~PluginMenu()
+0700860c 00000014 T CTRPluginFramework::PluginMenu::Append(CTRPluginFramework::MenuFolder*) const
+07008620 00000044 T CTRPluginFramework::PluginMenu::Run() const
+07008664 00000008 T CTRPluginFramework::PluginMenu::IsOpen()
+0700866c 00000010 T CTRPluginFramework::PluginMenu::GetRunningInstance()
+0700867c 0000000c T CTRPluginFramework::PluginMenu::SynchronizeWithFrame(bool)
+07008688 00000014 T CTRPluginFramework::Controller::GetKeysDown()
+0700869c 0000001c T CTRPluginFramework::Controller::IsKeyDown(CTRPluginFramework::Key)
+070086b8 0000001c T CTRPluginFramework::Controller::IsKeyPressed(CTRPluginFramework::Key)
+070086d4 0000001c T CTRPluginFramework::Controller::IsKeyReleased(CTRPluginFramework::Key)
+070086f0 0000001c T CTRPluginFramework::Controller::IsKeysDown(unsigned long)
+0700870c 00000034 T CTRPluginFramework::Controller::IsKeysPressed(unsigned long)
+07008740 0000002c T CTRPluginFramework::Controller::Update()
+0700876c 00000078 t CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}::operator()(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&) const [clone .isra.0]
+070087e4 00000044 W CTRPluginFramework::FSPath::operator FS_Path()
+07008828 0000004c T CTRPluginFramework::Directory::Close() const
+07008874 000000e8 T CTRPluginFramework::Directory::OpenFile(CTRPluginFramework::File&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) const
+0700895c 00000014 T CTRPluginFramework::Directory::GetFullName[abi:cxx11]() const
+07008970 00000008 T CTRPluginFramework::Directory::IsOpen() const
+07008978 00000040 T CTRPluginFramework::Directory::Directory()
+07008978 00000040 T CTRPluginFramework::Directory::Directory()
+070089b8 00000034 W std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> >::clear()
+070089ec 00000060 T CTRPluginFramework::Directory::~Directory()
+070089ec 00000060 T CTRPluginFramework::Directory::~Directory()
+07008a4c 00000020 W std::_Vector_base<unsigned short, std::allocator<unsigned short> >::~_Vector_base()
+07008a4c 00000020 W std::_Vector_base<unsigned short, std::allocator<unsigned short> >::~_Vector_base()
+07008a6c 00000098 T CTRPluginFramework::Directory::ChangeWorkingDirectory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008b04 000000a0 T CTRPluginFramework::Directory::Create(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008ba4 000000a0 T CTRPluginFramework::Directory::Remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008c44 000000d4 T CTRPluginFramework::Directory::Rename(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008d18 00000094 T CTRPluginFramework::Directory::IsExists(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008dac 0000014c T CTRPluginFramework::Directory::Open(CTRPluginFramework::Directory&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+07008ef8 0000005c T CTRPluginFramework::Directory::Directory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+07008ef8 0000005c T CTRPluginFramework::Directory::Directory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+07008f54 0000003c W std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07008f90 0000001c W CTRPluginFramework::Directory::DirectoryEntry::DirectoryEntry(CTRPluginFramework::Directory::DirectoryEntry&&)
+07008f90 0000001c W CTRPluginFramework::Directory::DirectoryEntry::DirectoryEntry(CTRPluginFramework::Directory::DirectoryEntry&&)
+07008fac 00000178 W void std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> >::_M_realloc_insert<CTRPluginFramework::Directory::DirectoryEntry>(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, CTRPluginFramework::Directory::DirectoryEntry&&)
+07009124 0000001c W CTRPluginFramework::Directory::DirectoryEntry::operator=(CTRPluginFramework::Directory::DirectoryEntry&&)
+07009140 0000012c t void std::__adjust_heap<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, int, CTRPluginFramework::Directory::DirectoryEntry, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, int, __gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, CTRPluginFramework::Directory::DirectoryEntry, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>) [clone .isra.0]
+0700926c 0000007c t void std::__pop_heap<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>&) [clone .isra.0]
+070092e8 00000068 t void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Val_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Val_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>) [clone .isra.0]
+07009350 000000ac t void std::__insertion_sort<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>) [clone .isra.0]
+070093fc 00000084 W void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+07009480 00000044 W std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<CTRPluginFramework::Directory::DirectoryEntry> >, std::is_move_constructible<CTRPluginFramework::Directory::DirectoryEntry>, std::is_move_assignable<CTRPluginFramework::Directory::DirectoryEntry> >::value, void>::type std::swap<CTRPluginFramework::Directory::DirectoryEntry>(CTRPluginFramework::Directory::DirectoryEntry&, CTRPluginFramework::Directory::DirectoryEntry&)
+070094c4 000001d8 t void std::__introsort_loop<__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, int, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Directory::DirectoryEntry*, std::vector<CTRPluginFramework::Directory::DirectoryEntry, std::allocator<CTRPluginFramework::Directory::DirectoryEntry> > >, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>, int, __gnu_cxx::__ops::_Iter_comp_iter<CTRPluginFramework::Directory::_List() const::{lambda(CTRPluginFramework::Directory::DirectoryEntry const&, CTRPluginFramework::Directory::DirectoryEntry const&)#1}>)
+0700969c 000001c8 T CTRPluginFramework::Directory::_List() const
+07009864 000000dc T CTRPluginFramework::Directory::ListFiles(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+07009940 000000e0 T CTRPluginFramework::Directory::ListDirectories(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+07009a20 00000074 T CTRPluginFramework::File::Close() const
+07009a94 000000b8 T CTRPluginFramework::File::Read(void*, unsigned long) const
+07009b4c 000000f0 T CTRPluginFramework::File::Write(void const*, unsigned long)
+07009c3c 0000002c T CTRPluginFramework::File::WriteLine(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+07009c68 000000e4 T CTRPluginFramework::File::Seek(long long, CTRPluginFramework::File::SeekPos) const
+07009d4c 00000008 T CTRPluginFramework::File::Tell() const
+07009d54 00000030 T CTRPluginFramework::File::Rewind() const
+07009d84 00000034 T CTRPluginFramework::File::Flush() const
+07009db8 0000006c T CTRPluginFramework::File::GetSize() const
+07009e24 000000dc T CTRPluginFramework::File::Dump(unsigned long, unsigned long)
+07009f00 00000008 T CTRPluginFramework::File::IsOpen() const
+07009f08 00000014 T CTRPluginFramework::File::GetFullName[abi:cxx11]() const
+07009f1c 00000044 T CTRPluginFramework::File::File()
+07009f1c 00000044 T CTRPluginFramework::File::File()
+07009f60 00000094 T CTRPluginFramework::File::Create(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+07009ff4 000000d4 T CTRPluginFramework::File::Rename(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700a0c8 00000084 T CTRPluginFramework::File::Remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700a14c 000000a0 T CTRPluginFramework::File::Exists(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700a1ec 00000114 T CTRPluginFramework::File::Open(CTRPluginFramework::File&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)
+0700a300 00000060 T CTRPluginFramework::File::File(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long)
+0700a300 00000060 T CTRPluginFramework::File::File(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long)
+0700a360 00000024 T CTRPluginFramework::Lock::Lock(CTRPluginFramework::Mutex&)
+0700a360 00000024 T CTRPluginFramework::Lock::Lock(CTRPluginFramework::Mutex&)
+0700a384 0000004c T CTRPluginFramework::Lock::~Lock()
+0700a384 0000004c T CTRPluginFramework::Lock::~Lock()
+0700a3d0 00000014 T CTRPluginFramework::Mutex::Mutex()
+0700a3d0 00000014 T CTRPluginFramework::Mutex::Mutex()
+0700a3e4 00000028 T CTRPluginFramework::Mutex::~Mutex()
+0700a3e4 00000028 T CTRPluginFramework::Mutex::~Mutex()
+0700a40c 00000004 T CTRPluginFramework::Mutex::Lock()
+0700a410 00000004 T CTRPluginFramework::Mutex::Unlock()
+0700a414 00000010 T CTRPluginFramework::Process::GetHandle()
+0700a424 00000010 T CTRPluginFramework::Process::GetTitleID()
+0700a434 00000060 T CTRPluginFramework::Process::GetTitleID(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0700a494 00000038 T CTRPluginFramework::Process::GetName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0700a4cc 00000024 T CTRPluginFramework::Process::GetTextSize()
+0700a4f0 00000008 T CTRPluginFramework::Process::Pause()
+0700a4f8 00000010 T CTRPluginFramework::Process::Play(unsigned long)
+0700a508 000000a8 T CTRPluginFramework::Process::CopyMemory(void*, void const*, unsigned long)
+0700a5b0 00000004 T CTRPluginFramework::Process::CheckAddress(unsigned long, unsigned long)
+0700a5b4 0000004c T CTRPluginFramework::Process::CheckRegion(unsigned long, unsigned long&, unsigned long)
+0700a600 0000001c T CTRPluginFramework::Process::Write32(unsigned long, unsigned long)
+0700a61c 0000001c T CTRPluginFramework::Process::Write16(unsigned long, unsigned short)
+0700a638 0000001c T CTRPluginFramework::Process::Write8(unsigned long, unsigned char)
+0700a654 00000024 T CTRPluginFramework::Process::WriteFloat(unsigned long, float)
+0700a678 00000020 T CTRPluginFramework::Process::Read32(unsigned long, unsigned long&)
+0700a698 00000020 T CTRPluginFramework::Process::Read16(unsigned long, unsigned short&)
+0700a6b8 00000020 T CTRPluginFramework::Process::Read8(unsigned long, unsigned char&)
+0700a6d8 00000020 T CTRPluginFramework::Process::ReadFloat(unsigned long, float&)
+0700a6f8 0000016c T CTRPluginFramework::Process::ReadString(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long, CTRPluginFramework::StringFormat)
+0700a864 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
+0700a8dc 0000005c t CTRPluginFramework::GetName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0700a938 0000005c W CTRPluginFramework::Color::operator std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >() const
+0700a994 0000005c T CTRPluginFramework::Utils::Format[abi:cxx11](char const*, ...)
+0700a9f0 00000044 T CTRPluginFramework::Utils::ToHex[abi:cxx11](unsigned long)
+0700aa34 00000080 T CTRPluginFramework::Utils::ToString[abi:cxx11](float, int)
+0700aab4 000000b8 T CTRPluginFramework::Utils::GetSize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700ab6c 00000144 T CTRPluginFramework::Utils::RemoveLastChar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0700acb0 00000038 W std::mersenne_twister_engine<unsigned int, 32u, 624u, 397u, 31u, 2567483615u, 11u, 4294967295u, 7u, 2636928640u, 15u, 4022730752u, 18u, 1812433253u>::seed(unsigned int)
+0700ace8 0000001c T CTRPluginFramework::InitializeRandomEngine()
+0700ad04 00000258 t CTRPluginFramework::ListFolders(CTRPluginFramework::MenuFolderImpl&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+0700af5c 00000044 W std::_Deque_base<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> >::~_Deque_base()
+0700af5c 00000044 W std::_Deque_base<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> >::~_Deque_base()
+0700afa0 00000740 t CTRPluginFramework::SDExplorerInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+0700b6e0 00000008 T CTRPluginFramework::Utils::FilePicker(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700b6e8 00000044 T CTRPluginFramework::Utils::DirectoryPicker(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+0700b72c 00000100 W void std::vector<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> >::_M_realloc_insert<CTRPluginFramework::Event const&>(__gnu_cxx::__normal_iterator<CTRPluginFramework::Event*, std::vector<CTRPluginFramework::Event, std::allocator<CTRPluginFramework::Event> > >, CTRPluginFramework::Event const&)
+0700b82c 0000010c W std::mersenne_twister_engine<unsigned int, 32u, 624u, 397u, 31u, 2567483615u, 11u, 4294967295u, 7u, 2636928640u, 15u, 4022730752u, 18u, 1812433253u>::operator()()
+0700b938 00000068 T CTRPluginFramework::Utils::Random(unsigned long, unsigned long)
+0700b9a0 0000001c t _GLOBAL__sub_I__ZN18CTRPluginFramework5Utils6FormatB5cxx11EPKcz
+0700b9bc 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
+0700ba34 0000002c T CTRPluginFramework::GetRatio(int, int, int, int)
+0700ba60 00000108 T CTRPluginFramework::PostProcess(CTRPluginFramework::BMPImage*, int, int)
+0700bb68 000001cc t CTRPluginFramework::Preferences::LoadBackgrounds()::{lambda(void*)#1}::_FUN(void*)
+0700bd34 00000200 T CTRPluginFramework::Preferences::OpenConfigFile(CTRPluginFramework::File&, CTRPluginFramework::Preferences::HeaderV11&)
+0700bf34 00000094 T CTRPluginFramework::Preferences::LoadSettings()
+0700bfc8 000000bc T CTRPluginFramework::Preferences::LoadSavedEnabledCheats()
+0700c084 000000bc T CTRPluginFramework::Preferences::LoadSavedFavorites()
+0700c140 0000005c T CTRPluginFramework::Preferences::LoadHotkeysFromFile()
+0700c19c 0000009c T CTRPluginFramework::Preferences::LoadBackgrounds()
+0700c238 00000170 T CTRPluginFramework::Preferences::WriteSettings()
+0700c3a8 00000060 T CTRPluginFramework::Preferences::ApplyBacklight()
+0700c408 00000004 T CTRPluginFramework::Preferences::Initialize()
+0700c40c 00000108 t _GLOBAL__sub_I__ZN18CTRPluginFramework11Preferences18topBackgroundImageE
+0700c514 00000078 t std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [clone .isra.0]
+0700c58c 00000024 T CTRPluginFramework::BMPImage::BitmapFileHeader::Read(CTRPluginFramework::File&)
+0700c5b0 00000024 T CTRPluginFramework::BMPImage::BitmapInformationHeader::Read(CTRPluginFramework::File&)
+0700c5d4 00000038 T CTRPluginFramework::BMPImage::~BMPImage()
+0700c5d4 00000038 T CTRPluginFramework::BMPImage::~BMPImage()
+0700c60c 00000008 T CTRPluginFramework::BMPImage::IsLoaded() const
+0700c614 00000008 T CTRPluginFramework::BMPImage::Width() const
+0700c61c 00000008 T CTRPluginFramework::BMPImage::Height() const
+0700c624 00000008 T CTRPluginFramework::BMPImage::GetDimensions() const
+0700c62c 00000010 T CTRPluginFramework::BMPImage::data() const
+0700c63c 0000001c T CTRPluginFramework::BMPImage::end() const
+0700c658 00000028 W CTRPluginFramework::BMPImage::DataClear()
+0700c680 0000008c T CTRPluginFramework::BMPImage::BMPImage(unsigned long, unsigned long)
+0700c680 0000008c T CTRPluginFramework::BMPImage::BMPImage(unsigned long, unsigned long)
+0700c70c 00000034 T CTRPluginFramework::BMPImage::Unload()
+0700c740 000001dc T CTRPluginFramework::BMPImage::SaveImage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+0700c91c 00000048 T CTRPluginFramework::BMPImage::ReverseChannels()
+0700c964 00000030 T CTRPluginFramework::BMPImage::RGBtoBGR()
+0700c994 00000124 T CTRPluginFramework::BMPImage::OptimiseForRendering()
+0700cab8 000000c8 T CTRPluginFramework::BMPImage::Draw(int, int)
+0700cb80 00000008 T CTRPluginFramework::BMPImage::Draw(CTRPluginFramework::Vector<int> const&)
+0700cb88 000000f0 T CTRPluginFramework::BMPImage::Draw(CTRPluginFramework::Rect<int> const&, float)
+0700cc78 000000d4 T CTRPluginFramework::BMPImage::FillWithImg(CTRPluginFramework::BMPImage const&)
+0700cd4c 00000070 T CTRPluginFramework::BMPImage::_CreateBitmap()
+0700cdbc 00000024 T CTRPluginFramework::BMPImage::SetWidthHeight(unsigned long, unsigned long)
+0700cde0 00000120 T CTRPluginFramework::BMPImage::Resample(CTRPluginFramework::BMPImage&, int, int)
+0700cf00 00000058 T CTRPluginFramework::BMPImage::BMPImage(CTRPluginFramework::BMPImage const&, unsigned long, unsigned long)
+0700cf00 00000058 T CTRPluginFramework::BMPImage::BMPImage(CTRPluginFramework::BMPImage const&, unsigned long, unsigned long)
+0700cf58 0000002c W unsigned char* std::copy<unsigned char*, unsigned char*>(unsigned char*, unsigned char*, unsigned char*)
+0700cf84 00000324 T CTRPluginFramework::BMPImage::_LoadBitmap()
+0700d2a8 0000004c T CTRPluginFramework::BMPImage::BMPImage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700d2a8 0000004c T CTRPluginFramework::BMPImage::BMPImage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+0700d2f4 00000178 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+0700d2f4 00000178 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+0700d46c 00000158 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+0700d46c 00000158 T CTRPluginFramework::MessageBoxImpl::MessageBoxImpl(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::DialogType, CTRPluginFramework::ClearScreen)
+0700d5c4 00000074 T CTRPluginFramework::MessageBoxImpl::_ProcessEvent(CTRPluginFramework::Event&)
+0700d638 000002b4 T CTRPluginFramework::MessageBoxImpl::_Draw()
+0700d8ec 000001ac T CTRPluginFramework::MessageBoxImpl::operator()()
+0700da98 00000020 t __tcf_0
+0700dab8 00000094 T CTRPluginFramework::OSDImpl::DrawNotif_TaskFunc(void*)
+0700db4c 00000064 W CTRPluginFramework::Task::~Task()
+0700db4c 00000064 W CTRPluginFramework::Task::~Task()
+0700dbb0 00000020 W std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> >::~vector()
+0700dbb0 00000020 W std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> >::~vector()
+0700dbd0 00000020 W std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> >::~vector()
+0700dbd0 00000020 W std::vector<bool (*)(CTRPluginFramework::Screen const&), std::allocator<bool (*)(CTRPluginFramework::Screen const&)> >::~vector()
+0700dbf0 0000005c t CTRPluginFramework::OSDImpl::Update()::{lambda(CTRPluginFramework::OSDImpl::OSDMessage*)#1}::operator()(CTRPluginFramework::OSDImpl::OSDMessage*) const [clone .isra.0]
+0700dc4c 00000030 t CTRPluginFramework::SearchStmfd(unsigned long, unsigned long, unsigned long) [clone .constprop.0]
+0700dc7c 000000b0 t CTRPluginFramework::memsearch(unsigned char*, void const*, unsigned long, unsigned long) [clone .constprop.0]
+0700dd2c 00000088 T CTRPluginFramework::OSDImpl::OSDMessage::OSDMessage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
+0700dd2c 00000088 T CTRPluginFramework::OSDImpl::OSDMessage::OSDMessage(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
+0700ddb4 0000000c T CTRPluginFramework::OSDImpl::Lock()
+0700ddc0 0000001c T CTRPluginFramework::OSDImpl::TryLock()
+0700dddc 0000000c T CTRPluginFramework::OSDImpl::Unlock()
+0700dde8 000000d8 T CTRPluginFramework::OSDImpl::UpdateScreens()
+0700dec0 0000015c T CTRPluginFramework::OSDImpl::WaitFramePaused()
+0700e01c 00000064 T CTRPluginFramework::OSDImpl::ResumeFrame(unsigned long)
+0700e080 000000d0 T CTRPluginFramework::InstallOSD()
+0700e150 00000048 T CTRPluginFramework::OSDImpl::_Initialize()
+0700e198 00000008 W __gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > > std::next<__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > > >(__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > >, std::iterator_traits<__gnu_cxx::__normal_iterator<CTRPluginFramework::OSDImpl::OSDMessage**, std::vector<CTRPluginFramework::OSDImpl::OSDMessage*, std::allocator<CTRPluginFramework::OSDImpl::OSDMessage*> > > >::difference_type)
+0700e1a0 00000190 t _GLOBAL__sub_I__ZN18CTRPluginFramework7OSDImpl12DrawSaveIconE
+0700e330 000001b4 T CTRPluginFramework::OSDImpl::Update()
+0700e4e4 000000c8 T CTRPluginFramework::OSDImpl::OnTopScreenFrame()
+0700e5ac 000000e0 T CTRPluginFramework::OSDImpl::OnBottomScreenFrame()
+0700e68c 000003d8 T CTRPluginFramework::OSDImpl::CallbackCommon(unsigned long, void*, void*, int, int)
+0700ea64 0000008c T CTRPluginFramework::OSDImpl::MainCallback(unsigned long, int, void*, void*, int, int, int)
+0700eaf0 00000090 T CTRPluginFramework::OSDImpl::MainCallback2(unsigned long, unsigned long*, unsigned long, unsigned long)
+0700eb80 00000024 T CTRPluginFramework::PrivColor::_ReadRGBA8(unsigned char*)
+0700eba4 0000001c T CTRPluginFramework::PrivColor::_ReadBGR8(unsigned char*)
+0700ebc0 0000002c T CTRPluginFramework::PrivColor::_ReadRGB565(unsigned char*)
+0700ebec 00000030 T CTRPluginFramework::PrivColor::_ReadRGB5A1(unsigned char*)
+0700ec1c 00000028 T CTRPluginFramework::PrivColor::_ReadRGBA4(unsigned char*)
+0700ec44 00000028 T CTRPluginFramework::PrivColor::_WriteRGBA8(unsigned char*, CTRPluginFramework::Color const&)
+0700ec6c 00000020 T CTRPluginFramework::PrivColor::_WriteBGR8(unsigned char*, CTRPluginFramework::Color const&)
+0700ec8c 00000030 T CTRPluginFramework::PrivColor::_WriteRGB565(unsigned char*, CTRPluginFramework::Color const&)
+0700ecbc 00000048 T CTRPluginFramework::PrivColor::_WriteRGB5A1(unsigned char*, CTRPluginFramework::Color const&)
+0700ed04 00000044 T CTRPluginFramework::PrivColor::_WriteRGBA4(unsigned char*, CTRPluginFramework::Color const&)
+0700ed48 00000138 T CTRPluginFramework::PrivColor::SetFormat(GSPGPU_FramebufferFormats)
+0700ee80 0000002c T CTRPluginFramework::PrivColor::UseClamp(bool)
+0700eeac 00000064 W CTRPluginFramework::Rect<int>::Contains(int, int) const
+0700ef10 0000003c t __tls_init
+0700ef10 0000003c T TLS init function for CTRPluginFramework::PrivColor::_clampArea
+0700ef4c 00000040 T CTRPluginFramework::PrivColor::UseClamp(bool, CTRPluginFramework::Rect<int> const&)
+0700ef8c 00000098 T CTRPluginFramework::PrivColor::_WriteRGBA8Clamp(unsigned char*, CTRPluginFramework::Color const&)
+0700f024 00000090 T CTRPluginFramework::PrivColor::_WriteBGR8Clamp(unsigned char*, CTRPluginFramework::Color const&)
+0700f0b4 000000ac T CTRPluginFramework::PrivColor::_WriteRGB565Clamp(unsigned char*, CTRPluginFramework::Color const&)
+0700f160 000000b8 T CTRPluginFramework::PrivColor::_WriteRGB5A1Clamp(unsigned char*, CTRPluginFramework::Color const&)
+0700f218 000000b4 T CTRPluginFramework::PrivColor::_WriteRGBA4Clamp(unsigned char*, CTRPluginFramework::Color const&)
+0700f2cc 0000004c T CTRPluginFramework::Renderer::SetTarget(CTRPluginFramework::Target)
+0700f318 00000300 T CTRPluginFramework::Renderer::MenuSelector(int, int, int, int)
+0700f618 000000c0 T CTRPluginFramework::ProcessingLogo::Draw(int, int)
+0700f6d8 0000012c T CTRPluginFramework::Renderer::EndFrame(bool)
+0700f804 0000016c t CTRPluginFramework::DrawLineV(unsigned long, CTRPluginFramework::Color const&, unsigned char*, unsigned long)
+0700f970 00000020 W std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::~vector()
+0700f970 00000020 W std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::~vector()
+0700f990 000001a4 T CTRPluginFramework::Renderer::DrawLine(int, int, int, CTRPluginFramework::Color const&, int)
+0700fb34 00000118 T CTRPluginFramework::Renderer::DrawStippledLine(int, int, int, CTRPluginFramework::Color const&, int)
+0700fc4c 00000090 T CTRPluginFramework::Renderer::DrawRect(int, int, int, int, CTRPluginFramework::Color const&, bool, int)
+0700fcdc 000000a8 T CTRPluginFramework::Renderer::DrawRect(CTRPluginFramework::Rect<int> const&, CTRPluginFramework::Color const&, bool)
+0700fd84 000002b0 T CTRPluginFramework::Renderer::DrawRect2(CTRPluginFramework::Rect<int> const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
+07010034 00000044 W std::_Deque_base<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::~_Deque_base()
+07010034 00000044 W std::_Deque_base<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::~_Deque_base()
+07010078 0000004c W std::deque<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::pop_front()
+070100c4 000001b8 W void std::deque<CTRPluginFramework::Vector<int>, std::allocator<CTRPluginFramework::Vector<int> > >::emplace_back<CTRPluginFramework::Vector<int> >(CTRPluginFramework::Vector<int>&&)
+0701027c 000000fc W void std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::_M_realloc_insert<CTRPluginFramework::Line<int> >(__gnu_cxx::__normal_iterator<CTRPluginFramework::Line<int>*, std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > > >, CTRPluginFramework::Line<int>&&)
+07010378 00000040 W void std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >::emplace_back<CTRPluginFramework::Line<int> >(CTRPluginFramework::Line<int>&&)
 070103b8 0000067c T CTRPluginFramework::Renderer::ComputeRoundedRectangle(std::vector<CTRPluginFramework::Line<int>, std::allocator<CTRPluginFramework::Line<int> > >&, CTRPluginFramework::Rect<int> const&, float, int)
 07010a34 000001a4 T CTRPluginFramework::Renderer::DrawRoundedRectangle(CTRPluginFramework::Rect<int> const&, CTRPluginFramework::Color const&, CTRPluginFramework::Color const&)
 07010bd8 00000084 T CTRPluginFramework::Renderer::DrawPixel(int, int, CTRPluginFramework::Color const&)
