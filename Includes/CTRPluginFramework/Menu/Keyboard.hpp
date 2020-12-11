@@ -1,6 +1,7 @@
 #ifndef CTRPLUGINFRAMEWORK_KEYBOARD_HPP
 #define CTRPLUGINFRAMEWORK_KEYBOARD_HPP
 
+#include "CTRPluginFramework/Graphics/CustomIcon.hpp"
 #include "types.h"
 #include <string>
 #include <vector>
@@ -95,8 +96,16 @@ namespace CTRPluginFramework
         /**
          * \brief Populate a keyboard with the strings contained in an std::vector
          * \param input  A std::vector that contain a list of strings
+		 * \param resetScroll  Set to false to prevent resetting the scroll position if the list is the same size
          */
-        void    Populate(const std::vector<std::string> &input);
+        void    Populate(const std::vector<std::string> &input, bool resetScroll = true);
+
+		/**
+		 * \brief Populate a keyboard with the Icons contained in an std::vector
+		 * \param input  A std::vector that contain a list of strings
+		 * \param resetScroll  Set to false to prevent resetting the scroll position if the list is the same size
+		 */
+		void    Populate(const std::vector<CustomIcon>& input, bool resetScroll = true);
 
         /**
          * \brief Open a keyboard which is populated with strings
@@ -251,7 +260,7 @@ namespace CTRPluginFramework
     private:
         std::unique_ptr<KeyboardImpl>   _keyboard;
         bool                            _hexadecimal;
-        bool                            _isPopulated;
+        mutable bool                    _isPopulated;
     };
 }
 

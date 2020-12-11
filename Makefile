@@ -8,13 +8,16 @@ TOPDIR 		?= 	$(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
 TARGET		:= 	$(notdir $(CURDIR))
-PLGINFO 	:= 	CTRPluginFramework.plgInfo
+PLGINFO 	:= 	$(notdir $(TOPDIR)).plgInfo
 
 BUILD		:= 	Build
 INCLUDES	:= 	Includes
 LIBDIRS		:= 	$(TOPDIR)
 SOURCES 	:= 	Sources
-
+IP			:=  5
+FTP_HOST 	:=	192.168.1.
+FTP_PORT	:=	"5000"
+FTP_PATH	:=	"luma/plugins/"
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
@@ -28,8 +31,8 @@ CFLAGS		+=	$(INCLUDE) -DARM11 -D_3DS
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 
-ASFLAGS		:=	$(ARCH)
-LDFLAGS		:= -T $(TOPDIR)/3ds.ld $(ARCH) -Os -Wl,-Map,$(notdir $*.map),--gc-sections 
+ASFLAGS		:= $(ARCH)
+LDFLAGS		:= -T $(TOPDIR)/3gx.ld $(ARCH) -Os -Wl,--gc-sections,--strip-discarded,--strip-debug
 
 LIBS		:= -lCTRPluginFramework
 
@@ -58,9 +61,9 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I $(CURDIR)/$(dir) ) \
 					$(foreach dir,$(LIBDIRS),-I $(dir)/include) \
 					-I $(CURDIR)/$(BUILD)
 
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/Lib)
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 
-.PHONY: $(BUILD) clean all
+.PHONY: $(BUILD) re clean all install send
 
 #---------------------------------------------------------------------------------
 all: $(BUILD)
@@ -71,10 +74,16 @@ $(BUILD):
 
 #---------------------------------------------------------------------------------
 clean:
-	@echo clean ... 
-	@rm -fr $(BUILD) $(OUTPUT).3gx
+	@echo clean ...
+	@-rm -fr $(BUILD) $(OUTPUT).3gx
 
 re: clean all
+
+
+send:
+	@echo "Sending plugin over FTP"
+	@$(CURDIR)/sendfile.py $(TARGET).3gx $(FTP_PATH) "$(FTP_HOST)$(IP)" $(FTP_PORT)
+
 
 #---------------------------------------------------------------------------------
 
@@ -86,6 +95,7 @@ DEPENDS	:=	$(OFILES:.o=.d)
 # main targets
 #---------------------------------------------------------------------------------
 $(OUTPUT).3gx : $(OFILES)
+
 #---------------------------------------------------------------------------------
 # you need a rule like this for each extension you use as binary data
 #---------------------------------------------------------------------------------
@@ -97,9 +107,7 @@ $(OUTPUT).3gx : $(OFILES)
 #---------------------------------------------------------------------------------
 %.3gx: %.elf
 	@echo creating $(notdir $@)
-	@$(OBJCOPY) -O binary $(OUTPUT).elf $(TOPDIR)/objdump -S
-	@$(TOPDIR)/3gxtool.exe -s $(TOPDIR)/objdump $(TOPDIR)/$(PLGINFO) $@
-	@- rm $(TOPDIR)/objdump
+	@"$(TOPDIR)/3gxtool.exe" -s $(OUTPUT).elf $(TOPDIR)/$(PLGINFO) $@
 
 -include $(DEPENDS)
 

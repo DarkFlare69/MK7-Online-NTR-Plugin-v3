@@ -20,6 +20,11 @@ namespace CTRPluginFramework
         u32       BytesPerPixel;
         GSPFormat Format;
 
+		/**
+		 * \brief Flushes the framebuffers, mandatory if you want to read from screen, such as alpha blend!
+		 */
+		void    FlushFramebuffer() const;
+
         /**
          * \brief Get a pointer to the screen's framebuffer
          * \param posX The position on the screen to point to

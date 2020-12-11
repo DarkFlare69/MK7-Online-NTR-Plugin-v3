@@ -30,6 +30,7 @@ main.o: D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Sources/main.cpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Graphics/OSD.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/Keyboard.hpp \
+ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Graphics/CustomIcon.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/MenuEntry.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp \
@@ -44,11 +45,14 @@ main.o: D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Sources/main.cpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/File.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Mutex.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/FwkSettings.hpp \
+ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Rect.hpp \
+ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Vector.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Hook.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Lock.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Process.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/System.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Task.hpp \
+ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Thread.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Touch.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Vector.hpp \
  D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Sleep.hpp \
@@ -124,6 +128,8 @@ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu.hpp:
 
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/Keyboard.hpp:
 
+D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Graphics/CustomIcon.hpp:
+
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/MenuEntry.hpp:
 
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp:
@@ -152,6 +158,10 @@ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Mutex
 
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/FwkSettings.hpp:
 
+D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Rect.hpp:
+
+D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Vector.hpp:
+
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Hook.hpp:
 
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Lock.hpp:
@@ -161,6 +171,8 @@ D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Proce
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/System.hpp:
 
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Task.hpp:
+
+D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Thread.hpp:
 
 D:/ROM_Hacking/MK7-Online-NTR-Plugin-v3/Includes/CTRPluginFramework/System/Touch.hpp:
 
