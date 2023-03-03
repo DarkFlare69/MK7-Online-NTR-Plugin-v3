@@ -614,22 +614,23 @@ namespace CTRPluginFramework
 
 	void	itemWheel(MenuEntry *entry)
 	{
-		if (Controller::IsKeyDown(X))
-			writeItem(9);
-		if (Controller::IsKeyDown(Y))
-			writeItem(13);
-		if (Controller::IsKeyDown(Start))
-			writeItem(6);
-		if (Controller::IsKeyDown(Select))
-			writeItem(10);
-		if (Controller::IsKeyDown(DPadLeft))
-			writeItem(14);
-		if (Controller::IsKeyDown(DPadRight))
-			writeItem(2);
-		if (Controller::IsKeyDown(DPadDown))
-			writeItem(4);
-		if (Controller::IsKeyDown(DPadUp))
-			writeItem(1);
+		if (is_pressed(0x10))
+			writeItem(0x0);
+		if (is_pressed(0x20))
+			writeItem(0x3);
+		if (is_pressed(0x40))
+			writeItem(0x1);
+		if (is_pressed(0x80))
+			writeItem(0x2);
+		if (is_pressed(0x8))
+			writeItem(0x6);
+		if (is_pressed(0x4))
+			writeItem(0xA);
+		if (is_pressed(0x400))
+			writeItem(0x9);
+		if (is_pressed(0x800))
+			writeItem(0x8);
+
 	}
 
 	void    randomItems(MenuEntry *entry)
